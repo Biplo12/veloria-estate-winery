@@ -45,7 +45,7 @@ export function Wines() {
       {/* Painted as one picture, so the four bottles keep their relative size.
           Full width with the edges dissolved: its paper is not the page's. */}
       <Reveal className="mt-8 sm:mt-10">
-        <div className="band-dissolve relative aspect-3072/1536 w-full">
+        <div className="relative aspect-3072/1134 w-full">
           <Image
             src="/images/bottles-of-wine.webp"
             alt="The four Veloria wines painted in a row against red and olive brushstrokes, from the left: Rosso, Bellandi Riserva, Luna Bianca and Vecchia Vigna."

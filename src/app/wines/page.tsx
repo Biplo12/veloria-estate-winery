@@ -26,7 +26,7 @@ export default function WinesPage() {
           dissolved: the painting's cream is not the page's cream. */}
       <section className="pb-16 sm:pb-24">
         <Reveal as="figure">
-          <div className="band-dissolve relative aspect-3072/1536 w-full">
+          <div className="relative aspect-3072/1134 w-full">
             <Image
               src="/images/bottles-of-wine.webp"
               alt="Four painted bottles standing in a row against red and olive brushstrokes, each carrying a label of its own."
