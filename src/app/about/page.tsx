@@ -64,32 +64,27 @@ export default function AboutPage() {
           the estate is arranged around, so it arrives before the history. */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
-            <div className="lg:col-span-4">
-              <p className={EYEBROW}>The name</p>
-              <h2 className={`mt-6 ${HEADING}`}>
-                The name is the whole idea.
-              </h2>
-
-              {/* Small, and on its own paper rather than in a frame: this
-                  sheet's cream is 2 units from the page's, so it has no edge
-                  to hide and needs neither a mask nor a plate. It fills the
-                  space under a two-line heading, which was empty. */}
-              <Image
-                src="/images/grapes-2.webp"
-                alt="A painted bunch of grapes, dark and red against a band of ochre."
-                width={1024}
-                height={1024}
-                sizes="(min-width: 1024px) 22rem, 60vw"
-                className="mt-10 h-auto w-full max-w-[22rem]"
-              />
-            </div>
+          {/* Painting on one side, all the words on the other, which is the
+              founding section below turned around. It was three things stacked
+              on the left against two on the right, with the grapes hanging
+              under a heading they had nothing to do with. */}
+          <Reveal className="grid grid-cols-1 items-start gap-x-8 gap-y-10 lg:grid-cols-12">
+            <Image
+              src="/images/grapes-2.webp"
+              alt="A painted bunch of grapes, dark and red against a band of ochre."
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 22rem, 60vw"
+              className="h-auto w-full max-w-[22rem] lg:col-span-4"
+            />
 
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="max-w-[26ch] text-2xl font-light leading-[1.25] text-ink sm:text-3xl">
+              <p className={EYEBROW}>The name</p>
+              <h2 className={`mt-6 ${HEADING}`}>The name is the whole idea.</h2>
+              <p className="mt-10 max-w-[30ch] text-2xl font-light leading-[1.25] text-ink sm:text-3xl">
                 {ESTATE.nameMeaning}
               </p>
-              <p className="mt-10 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+              <p className="mt-8 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
                 It is the shortest description of how the place works. Nothing
                 leaves here before it is ready, and the estate would rather be
                 late than early.
