@@ -5,7 +5,7 @@ import { createRequire } from "node:module";
 import fs from "node:fs";
 import path from "node:path";
 
-const PROJECT = "C:/Users/Robert/Documents/code/veloria-estate-winery";
+const PROJECT = path.resolve(import.meta.dirname, "..");
 const require = createRequire(path.join(PROJECT, "package.json"));
 const sharp = require("sharp");
 sharp.cache(false);
