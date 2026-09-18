@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 /* Jost — a geometric humanist in the Futura line. Tracked wide in caps it is
@@ -47,7 +49,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
-        {children}
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:z-50 focus:rounded-xs focus:bg-paper focus:px-4 focus:py-2 focus:text-sm focus:text-ink focus:outline-2 focus:outline-offset-2 focus:outline-vermilion"
+        >
+          Skip to content
+        </a>
+        {/* The header sits absolutely over whatever follows, so every page is
+            responsible for clearing it — the hero by composition, the rest
+            through <PageIntro>. */}
+        <SiteHeader />
+        {/* tabIndex -1 so the skip link actually moves focus, not just the
+            viewport — without it the next Tab returns to the header. */}
+        <div id="content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+          {children}
+        </div>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -1,14 +1,16 @@
 import Image from "next/image";
+import { Estate } from "@/components/estate";
 import { EstateBrief } from "@/components/estate-brief";
-import { SiteHeader } from "@/components/site-header";
+import { Family } from "@/components/family";
+import { Journal } from "@/components/journal";
 import { TimeScale } from "@/components/time-scale";
+import { Visit } from "@/components/visit";
+import { Wines } from "@/components/wines";
 
 export default function Home() {
   return (
-    <>
+    <main className="bg-paper">
       <section className="relative flex h-[100svh] flex-col overflow-hidden bg-paper">
-        <SiteHeader />
-
         <div className="relative flex w-full flex-1 flex-col">
           {/* The painting fills the screen exactly — never taller, never leaving
               a band of bare paper. `object-[50%_20%]` splits the overflow 20/80:
@@ -24,7 +26,7 @@ export default function Home() {
               src="/images/winery-hero.webp"
               alt="The Veloria estate house on the slope, with guests walking the flowering rows below the vineyard."
               fill
-              priority
+              preload
               sizes="100vw"
               className="object-cover object-[50%_20%]"
             />
@@ -38,7 +40,7 @@ export default function Home() {
               aria-hidden
               width={653}
               height={722}
-              priority
+              preload
               className="rise mx-auto h-24 w-auto sm:h-16 lg:h-20"
             />
 
@@ -61,7 +63,16 @@ export default function Home() {
       </section>
 
       <TimeScale />
+      <Wines />
+      <Estate />
+      <Family />
+      <Visit />
+      <Journal />
+
+      {/* The colophon. Everything above speaks as the estate; this speaks as the
+          person who built the site, so it comes last — the work first, then the
+          account of it. */}
       <EstateBrief />
-    </>
+    </main>
   );
 }

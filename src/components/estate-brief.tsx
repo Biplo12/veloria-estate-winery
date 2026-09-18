@@ -29,7 +29,7 @@ const COLUMNS: Column[] = [
 export function EstateBrief() {
   return (
     <section
-      id="about"
+      id="project"
       className="relative isolate flex min-h-[100svh] items-center overflow-hidden"
     >
       <Image

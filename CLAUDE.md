@@ -135,6 +135,33 @@ One hand drew this page. Anything new must obey the same rules.
   "discover", "experience", "journey", "nestled", no superlatives, no
   exclamation marks. Tell, do not sell.
 
+## The site
+
+Fourteen prerendered pages. The landing page is a sequence of sections; every
+nav item is a real route, not an anchor.
+
+| Route | What it is |
+|---|---|
+| `/` | hero → time → wines → vineyards → family → visit → journal → colophon |
+| `/about` | the founding, the name, the founder's quote, the family |
+| `/wines`, `/wines/[slug]` | the four wines, and one page each |
+| `/vineyards` | the land, the painted map, 7 → 42 hectares |
+| `/journal`, `/journal/[slug]` | notes from the estate |
+| `/visit` | the tasting room, on the looping video |
+| `/contacts` | how to reach the estate |
+
+Facts live in `src/data/` — `wines.ts`, `estate.ts`, `journal.ts`. **Never retype a
+price, vintage, hectare figure, name or date into a component.** Sections and
+routes both read from there, so the two can never drift apart.
+
+Nothing on the site transacts. There is no cart, no checkout, no booking backend
+and no form that submits. A call to action links to `/contacts`. Do not add one
+that pretends otherwise.
+
+The colophon (`EstateBrief`, `#project`) speaks as the person who built the site,
+not as the estate, which is why it sits last — the work first, then the account of
+it. Everything above it stays in the estate's voice.
+
 ## Longer-term scope
 
 The project is meant to grow past a landing page: shop, tasting reservations,
