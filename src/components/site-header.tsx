@@ -16,7 +16,12 @@ function NavLink({ label, href }: Nav) {
 }
 
 /**
- * Sticky, with the mark in the middle.
+ * Sticky, with the mark in the middle and a painted motif at either end.
+ *
+ * The bottle and the grapes are decoration and nothing else: they carry no
+ * link and no alt text, so the row still reads as five links and a home mark.
+ * Both are `-cut` files, because the header's ground is the translucent paper
+ * and not the flat cream those sheets were painted on.
  *
  * It carries a translucent paper ground rather than none: once it follows the
  * reader down the page it passes over paintings and over the dark visiting
@@ -27,9 +32,9 @@ function NavLink({ label, href }: Nav) {
  * Being sticky it sits in the flow and takes real height, so the hero measures
  * itself against `--header-h` rather than against the whole viewport.
  *
- * On a phone the mark takes its own line above the links: five links and a mark
- * in one row overflowed 375px by 67px, and nothing here is allowed to push the
- * page sideways.
+ * On a phone the mark takes its own line above the links and the two motifs
+ * drop out entirely: five links and a mark in one row overflowed 375px by
+ * 67px, and nothing here is allowed to push the page sideways.
  */
 export function SiteHeader() {
   return (
@@ -38,11 +43,21 @@ export function SiteHeader() {
         aria-label="Primary"
         className="mx-auto flex h-full max-w-[86rem] flex-wrap items-center justify-center gap-x-5 gap-y-1 px-5 sm:flex-nowrap sm:justify-between sm:px-10"
       >
-        <ul className="flex items-center gap-4 sm:gap-9">
-          {NAV_LEFT.map((link) => (
-            <NavLink key={link.href} {...link} />
-          ))}
-        </ul>
+        <div className="flex items-center gap-5 sm:flex-1 sm:gap-9">
+          <Image
+            src="/images/bottle-cut.webp"
+            alt=""
+            aria-hidden
+            width={671}
+            height={920}
+            className="hidden h-8 w-auto shrink-0 sm:block"
+          />
+          <ul className="flex items-center gap-4 sm:gap-9">
+            {NAV_LEFT.map((link) => (
+              <NavLink key={link.href} {...link} />
+            ))}
+          </ul>
+        </div>
 
         <Link
           href="/"
@@ -59,11 +74,21 @@ export function SiteHeader() {
           />
         </Link>
 
-        <ul className="flex items-center gap-4 sm:gap-9">
-          {NAV_RIGHT.map((link) => (
-            <NavLink key={link.href} {...link} />
-          ))}
-        </ul>
+        <div className="flex items-center gap-5 sm:flex-1 sm:justify-end sm:gap-9">
+          <ul className="flex items-center gap-4 sm:gap-9">
+            {NAV_RIGHT.map((link) => (
+              <NavLink key={link.href} {...link} />
+            ))}
+          </ul>
+          <Image
+            src="/images/grapes-cut.webp"
+            alt=""
+            aria-hidden
+            width={681}
+            height={810}
+            className="hidden h-8 w-auto shrink-0 sm:block"
+          />
+        </div>
       </nav>
     </header>
   );
