@@ -73,7 +73,6 @@ export function Family() {
                   as="li"
                   key={name}
                   delay={index === 0 ? 0 : index === 1 ? 90 : 180}
-                  className="border-t border-ink/15 pt-6"
                 >
                   <div className="flex h-36 items-end sm:h-44">
                     <Image

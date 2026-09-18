@@ -84,7 +84,7 @@ export function Estate() {
         </Reveal>
       </div>
 
-      <div className="band-dissolve relative mt-24 aspect-3360/1440 w-full sm:mt-32">
+      <div className="band-dissolve relative mt-24 aspect-3360/1680 w-full sm:mt-32">
         <Image
           src="/images/vineyard-harvest.webp"
           alt="Two people working down a row of vines, cutting bunches into baskets by hand."

@@ -196,7 +196,7 @@ export default function AboutPage() {
                     portraitHeight,
                     portraitAlt,
                   }) => (
-                    <li key={name} className="border-t border-ink/15 pt-8">
+                    <li key={name}>
                       {/* Each portrait was trimmed to its own silhouette, so at
                           equal width the narrowest one drew tallest. A fixed
                           height with the figures sitting on the bottom edge puts

@@ -127,7 +127,7 @@ export default function VineyardsPage() {
 
       {/* The harvest, full width, its edges dissolved into the page. */}
       <section className="py-16 sm:py-24">
-        <div className="band-dissolve relative aspect-3360/1440 w-full">
+        <div className="band-dissolve relative aspect-3360/1680 w-full">
           <Image
             src="/images/vineyard-harvest.webp"
             alt="Pickers working down a row of vines in the late summer, cutting bunches into shallow baskets by hand."
