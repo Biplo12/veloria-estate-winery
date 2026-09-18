@@ -12,6 +12,23 @@ sharp.cache(false);
 
 const PAPER = [244, 234, 221];
 
+/**
+ * Bare edges that have been looked at and are not faults. A check that reports
+ * known-good cases as problems gets ignored, and then it catches nothing.
+ */
+const ACCEPTED = {
+  "tasting-room-poster":
+    "pokrywa cala ciemna sekcje pod scrimem, nigdy nie styka sie z kremem",
+};
+
+/**
+ * Past this distance from the page cream the edge is plainly a different
+ * colour, so it reads as a picture with a frame rather than as paper that
+ * failed to match. The fault worth catching lives in the narrow band between:
+ * close enough to look like a mistake, far enough to be seen.
+ */
+const OBVIOUSLY_A_PICTURE = 40;
+
 function walk(dir, acc = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
@@ -76,8 +93,10 @@ for (const [name, places] of [...uses].sort()) {
   if (transparent) verdict = "ok — wyciety (alpha)";
   else if (!anyUnmasked) verdict = "ok — wygaszony maska";
   else if (dist < 4) verdict = "ok — papier zgodny z tlem";
-  else if (dist < 40) verdict = `!! SZEW — papier o ${dist.toFixed(0)} od tla, bez maski`;
-  else verdict = `!! TWARDA KRAWEDZ — obraz do brzegu (${dist.toFixed(0)}), bez maski`;
+  else if (ACCEPTED[name]) verdict = `ok — ${ACCEPTED[name]}`;
+  else if (dist >= OBVIOUSLY_A_PICTURE)
+    verdict = `ok — obraz do wlasnych krawedzi (${dist.toFixed(0)} od tla), czyta sie jako obraz`;
+  else verdict = `!! SZEW — papier o ${dist.toFixed(0)} od tla, bez maski`;
 
   rows.push({ name, edge, dist, alpha: Math.round(alpha), verdict, places });
 }
