@@ -225,6 +225,22 @@ The source sheet held five figures; the woman in the navy apron is kept as
 older man, because he is remembered as the founder who died in 2019; Lorenzo
 reads a little young for fifty.
 
+## Replacing an image in place
+
+Next's dev image optimiser caches by URL, not by file contents. Overwrite a file
+in `public/images/` without changing its name and the dev server keeps serving
+the **old** optimised copy, at the old dimensions, until the cache is cleared.
+A browser hard refresh does not help, because the staleness is on the server.
+
+This cost an afternoon: the four bottles were correct on disk at 900x1200 while
+`/wines` was still being served 442x679 and 546x687, so they kept rendering at
+different sizes and the code looked wrong when it was not. After replacing any
+image, run:
+
+```
+rm -rf .next/dev/cache/images
+```
+
 ## Panorama
 
 `winery-panorama.webp` is 1680x720. It is painted to the edge of its sheet, so it
