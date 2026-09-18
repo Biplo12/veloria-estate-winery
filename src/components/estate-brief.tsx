@@ -55,14 +55,14 @@ export function EstateBrief() {
               .join(" ")}
           >
             <h2
-              className={`text-2xl font-semibold italic leading-none ${
+              className={`text-3xl font-semibold italic leading-none lg:text-4xl ${
                 column.accent ? "text-vine" : "text-white"
               }`}
             >
               {column.heading}
             </h2>
             <p
-              className={`mt-6 hyphens-auto text-justify text-[1.0625rem] leading-[1.65] ${
+              className={`mt-6 hyphens-auto text-justify text-xl leading-[1.5] lg:text-[1.375rem] ${
                 column.accent ? "text-vine" : "text-white"
               }`}
             >
