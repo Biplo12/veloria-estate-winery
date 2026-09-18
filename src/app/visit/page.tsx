@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Onward, type OnwardLink } from "@/components/onward";
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
 import { ESTATE, VISITABLE } from "@/data/estate";
@@ -10,6 +11,19 @@ export const metadata: Metadata = {
   title: "Visit",
   description: `${ESTATE.tenuta} is open to visitors from spring through harvest, the tasting room, the restaurant, a small guest hotel, the olive garden and the ${ESTATE.founded} cellar, ${ESTATE.altitudeMetres} metres above sea level.`,
 };
+
+const ONWARD: readonly OnwardLink[] = [
+  {
+    href: "/wines",
+    title: "The wines",
+    line: "What is poured at that table, and what went into it.",
+  },
+  {
+    href: "/vineyards",
+    title: "The vineyards",
+    line: "The slope the whole of it comes off.",
+  },
+];
 
 export default function VisitPage() {
   return (
@@ -34,7 +48,11 @@ export default function VisitPage() {
       {/* The same treatment the landing section gives it: full width, so the
           room is never a rectangle pasted on the paper. */}
       <section>
-        <div className="band-dissolve">
+        {/* No dissolve. The painting is edge to edge in colour, 66 from the
+            page cream at the top and 102 at the bottom, and fading paint that
+            dark leaves a smear with a line at the end of it rather than an
+            edge. */}
+        <div>
           <div className="relative aspect-4/3 w-full sm:aspect-832/464 sm:max-h-[62svh]">
             <Image
               src="/images/tasting-room-poster.webp"
@@ -175,6 +193,7 @@ export default function VisitPage() {
           </div>
         </div>
       </section>
+      <Onward links={ONWARD} />
     </main>
   );
 }

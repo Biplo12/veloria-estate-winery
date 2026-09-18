@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
-import { BACK_LABEL, ESTATE } from "@/data/estate";
+import { ESTATE } from "@/data/estate";
 
 export const metadata: Metadata = {
   title: "Contacts",
@@ -28,10 +28,12 @@ export default function ContactsPage() {
         lead={`${ESTATE.openTo} Write or telephone and one of the people who works here will answer, there is nothing automatic at this end.`}
       />
 
-      {/* The way in. Painted edge to edge, so it bleeds the full width at its
-          own 21:9 and dissolves top and bottom rather than sitting on the page
-          as a rectangle. */}
-      <div className="band-dissolve relative aspect-3360/1440 w-full">
+      {/* The way in, full width at its own 21:9 and never cropped. No
+          dissolve: its bottom is the drive in shadow, 202 units from the page
+          cream, and fading that did not make an edge, it drew a line across
+          the picture. The mask is for sheets whose own cream misses the
+          page's, and there is no cream showing here at all. */}
+      <div className="relative aspect-3360/1440 w-full">
         <Image
           src="/images/winery-gate.webp"
           alt="A painted gravel drive running up between cypresses to an open iron gate in a low stone wall, with tile-roofed farm buildings among the trees on either side."
@@ -57,7 +59,7 @@ export default function ContactsPage() {
               </Reveal>
 
               <Reveal delay={90}>
-                <dl className="mt-12 border-y border-ink/10">
+                <dl className="mt-12 border-t border-ink/10">
                   <div className="grid gap-2 border-b border-ink/10 py-6 sm:grid-cols-12 sm:gap-8">
                     <dt className={termClass}>Email</dt>
                     <dd className="text-base leading-[1.6] text-ink sm:col-span-8 sm:text-lg">
@@ -112,22 +114,6 @@ export default function ContactsPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="border-t border-ink/10 pt-16 text-center sm:pt-24">
-            <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-              Printed on the back of every bottle
-            </p>
-            <p className="mx-auto mt-12 max-w-[34ch] text-lg leading-[2.1] text-ink sm:mt-16 sm:text-xl">
-              {BACK_LABEL.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
-            </p>
-          </Reveal>
-        </div>
-      </section>
     </main>
   );
 }
