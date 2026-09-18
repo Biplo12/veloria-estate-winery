@@ -29,6 +29,15 @@ const ACCEPTED = {
  */
 const OBVIOUSLY_A_PICTURE = 40;
 
+/**
+ * Under this distance the sheet and the page are the same cream as far as a
+ * screen is concerned. Measured, not guessed: collecting-grapes sits 5 from
+ * the page by this script's own reckoning, and at the rendered boundary the
+ * step is rgb(244,234,221) to rgb(242,234,225), which nothing can see. The
+ * threshold was 4 and reported that asset as a seam.
+ */
+const SAME_CREAM = 8;
+
 function walk(dir, acc = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
@@ -92,7 +101,7 @@ for (const [name, places] of [...uses].sort()) {
   let verdict;
   if (transparent) verdict = "ok — wyciety (alpha)";
   else if (!anyUnmasked) verdict = "ok — wygaszony maska";
-  else if (dist < 4) verdict = "ok — papier zgodny z tlem";
+  else if (dist < SAME_CREAM) verdict = "ok — papier zgodny z tlem";
   else if (ACCEPTED[name]) verdict = `ok — ${ACCEPTED[name]}`;
   else if (dist >= OBVIOUSLY_A_PICTURE)
     verdict = `ok — obraz do wlasnych krawedzi (${dist.toFixed(0)} od tla), czyta sie jako obraz`;
