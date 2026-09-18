@@ -31,9 +31,11 @@ export default function VisitPage() {
           the brushwork breaks up. At the container's 1376px the 1664px file
           oversamples it instead. Nothing here invents detail that was never
           filmed, it only stops the browser stretching what there is. */}
-      <section className="mx-auto max-w-[86rem] px-6 sm:px-10">
-        <div>
-          <div className="relative aspect-4/3 w-full sm:aspect-832/464 sm:max-h-[78svh]">
+      {/* The same treatment the landing section gives it: full width, so the
+          room is never a rectangle pasted on the paper. */}
+      <section>
+        <div className="band-dissolve">
+          <div className="relative aspect-4/3 w-full sm:aspect-832/464 sm:max-h-[62svh]">
             <Image
               src="/images/tasting-room-poster.webp"
               alt="The tasting room: two people at the long wooden table, a bottle and glasses between them, the shutters thrown open on the hills beyond."

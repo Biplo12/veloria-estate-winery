@@ -84,10 +84,10 @@ export const WINES: Wine[] = [
     ],
     ageing: "Four months in steel. No oak.",
     bottles: 9000,
-    image: "/images/wine-luna-bianca-cut.webp",
+    image: "/images/wine-luna-bianca-pale-cut.webp",
     imageWidth: 900,
     imageHeight: 1200,
-    alt: "A painted bottle surrounded by olive leaves and coral fronds.",
+    alt: "A painted bottle of pale olive glass with a plain cream label, against soft blue and olive leaves.",
   },
   {
     slug: "vecchia-vigna",

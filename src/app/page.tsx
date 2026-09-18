@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Estate } from "@/components/estate";
 import { Family } from "@/components/family";
-import { TimeScale } from "@/components/time-scale";
 import { Visit } from "@/components/visit";
 import { Wines } from "@/components/wines";
 
@@ -64,7 +63,6 @@ export default function Home() {
         </div>
       </section>
 
-      <TimeScale />
       <Wines />
       <Estate />
       <Family />

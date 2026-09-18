@@ -149,7 +149,7 @@ nav item is a real route, not an anchor.
 
 | Route | What it is |
 |---|---|
-| `/` | hero, time, wines, vineyards, family, visit |
+| `/` | hero, wines, vineyards, family, visit |
 | `/about` | the founding, the name, the founder's quote, the family |
 | `/wines`, `/wines/[slug]` | the four wines, and one page each |
 | `/vineyards` | the land, the painted map, 7 → 42 hectares |
@@ -169,12 +169,18 @@ type, became a quiet note on the cream, and was then dropped: the whole page
 speaks as the estate, and a passage in the builder's voice never earned its
 place in that. `winery-photo.webp` is no longer rendered anywhere.
 
-**Devices that did not survive.** Two attempts to *draw* the length of the wait
-in the time section failed — a hairline rule per step read as four empty form
-fields, and a type size that grew with the duration only made the row look badly
-aligned. The steps are now set plainly and the cellar carries the idea. A
-proportional rule for 7 → 42 hectares went the same way. If a graphic needs a
-caption to be understood, it is not working.
+**Devices that did not survive.** The time section was reworked six times and
+then removed. Two attempts to *draw* the length of the wait failed — a hairline
+rule per step read as four empty form fields, and a type size that grew with the
+duration only made the row look badly aligned — and even set plainly beside the
+cellar it never earned its place. Its content lives on each wine's page in
+`ageing`. A proportional rule for 7 → 42 hectares went the same way. **If a
+graphic needs a caption to be understood, it is not working.**
+
+`barrels-of-wine-2.webp` is no longer rendered anywhere. Its paper was remapped
+to the page cream, so it can be dropped onto the background without a mask if a
+home is found for it — the founding story on /about mentions barrels under the
+family house.
 
 ## Longer-term scope
 
@@ -199,7 +205,7 @@ Use a `-cut` file whenever a motif sits on anything other than plain cream.
 |---|---|
 | Veloria Rosso 2021 | `wine-rosso.webp` |
 | Bellandi Riserva 2019 | `wine-riserva.webp` |
-| Luna Bianca 2023 | `wine-luna-bianca.webp` |
+| Luna Bianca 2023 | `wine-luna-bianca-pale-cut.webp` |
 | Veloria Vecchia Vigna 2016 | `wine-vecchia-vigna.webp` |
 | all four together | `bottles-of-wine.webp` |
 
@@ -210,9 +216,10 @@ common height and standing on a common baseline. **Keep that canvas.** Trimming
 one of them again reintroduces the fault, and the same thing happened to the
 portraits.
 
-`wine-luna-bianca` is painted as dark green glass, which reads as a red. It is the
-one asset that disagrees with the canon; regenerate it paler if the wines section
-makes that obvious.
+Luna Bianca was first painted in dark green glass, which read as a second red in
+a row of four. It was regenerated in pale olive glass and carries a new filename
+rather than replacing the old one in place, because Next's dev image optimiser
+caches by URL and would have gone on serving the dark bottle.
 
 ## Portraits
 
