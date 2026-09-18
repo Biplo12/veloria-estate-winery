@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Onward, type OnwardLink } from "@/components/onward";
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
+import { ESTATE } from "@/data/estate";
 import { WINES, price } from "@/data/wines";
 
 export const metadata: Metadata = {
@@ -11,6 +13,19 @@ export const metadata: Metadata = {
   description:
     "The four wines made at Tenuta Veloria, Veloria Rosso, Bellandi Riserva, Luna Bianca and Veloria Vecchia Vigna, with what is in each glass and how long it waited.",
 };
+
+const ONWARD: readonly OnwardLink[] = [
+  {
+    href: "/vineyards",
+    title: "The vineyards",
+    line: "The land all four of them are grown on.",
+  },
+  {
+    href: "/visit",
+    title: "Visiting",
+    line: ESTATE.openTo,
+  },
+];
 
 export default function WinesPage() {
   return (
@@ -102,6 +117,7 @@ export default function WinesPage() {
           </ol>
         </div>
       </section>
+      <Onward links={ONWARD} />
     </main>
   );
 }

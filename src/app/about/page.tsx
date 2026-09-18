@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 
+import { Onward, type OnwardLink } from "@/components/onward";
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
 import { ESTATE, FAMILY } from "@/data/estate";
@@ -42,14 +42,25 @@ const MOMENTS = [
   },
 ];
 
+const ONWARD: readonly OnwardLink[] = [
+  {
+    href: "/wines",
+    title: "The wines",
+    line: "Four of them, and what each one is made of.",
+  },
+  {
+    href: "/visit",
+    title: "Visiting",
+    line: ESTATE.openTo,
+  },
+];
+
 const EYEBROW =
   "pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft";
 
 const HEADING =
   "text-3xl font-light leading-[1.15] text-ink sm:text-4xl";
 
-const LINK =
-  "text-ink underline decoration-ink/30 underline-offset-[0.35em] transition-colors duration-200 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion";
 
 export default function AboutPage() {
   return (
@@ -236,25 +247,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal>
-            <p className={EYEBROW}>Next</p>
-            <p className="mt-6 max-w-[62ch] text-base leading-[1.6] text-ink sm:text-lg">
-              Each of the wines says more about the estate than this page can.{" "}
-              {ESTATE.openTo}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-x-10 gap-y-4 text-base sm:text-lg">
-              <Link href="/wines" className={LINK}>
-                The wines
-              </Link>
-              <Link href="/visit" className={LINK}>
-                Visiting the estate
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <Onward links={ONWARD} />
     </main>
   );
 }
