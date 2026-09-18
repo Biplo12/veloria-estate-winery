@@ -87,31 +87,50 @@ export default function AboutPage() {
       </section>
 
       <section className="py-16 sm:py-24">
+        {/* Two columns. The story's div carried lg:col-span-7 lg:col-start-6
+            with no grid above it to act on, so it fell into a narrow left
+            column and left half the page empty. */}
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal>
-            <div>
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
               <p className={EYEBROW}>{ESTATE.tenuta}</p>
               <h2 className={`mt-6 ${HEADING}`}>
                 It started in barrels under the house.
               </h2>
             </div>
 
-            <div className="lg:col-span-7 lg:col-start-6">
-              <div className="mt-10 max-w-[62ch] space-y-6 sm:mt-12">
-                {STORY.map((paragraph) => (
-                  <p
-                    key={paragraph.slice(0, 24)}
-                    className="text-base leading-[1.6] text-ink-soft sm:text-lg"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
+            <div className="max-w-[62ch] space-y-6 lg:col-span-7 lg:col-start-6">
+              {STORY.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 24)}
+                  className="text-base leading-[1.6] text-ink-soft sm:text-lg"
+                >
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </Reveal>
+        </div>
 
-          <Reveal delay={90}>
-            <ul className="mt-16 sm:mt-20">
+        {/* The cellar the paragraph above describes, and the first picture on
+            the page: everything before it was type. Unlike the panorama it
+            does get the dissolve, because its edges are its own paper rather
+            than its subject, a flat green wash at the top and a pale pink
+            floor at the bottom sitting 132 and 46 units off the page cream.
+            Both are even enough to fade without smearing. */}
+        <div className="band-dissolve relative mt-20 aspect-2912/1632 w-full sm:mt-24">
+          <Image
+            src="/images/barrels-of-wine-2.webp"
+            alt="The ageing cellar: barrels stacked two high in rows under a vaulted ceiling, and a man in an apron drawing a glass from one of them."
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+
+        <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
+          <Reveal className="mt-20 sm:mt-24">
+            <ul>
               {MOMENTS.map(({ year, what }) => (
                 <li
                   key={year}
@@ -129,10 +148,14 @@ export default function AboutPage() {
           </Reveal>
         </div>
 
-        {/* The panorama is painted to the edge of its sheet, so it bleeds the
-            full width at its own 2.33:1 and dissolves top and bottom rather
-            than sitting on the page as a box. No crop: the ratio is the file's. */}
-        <div className="band-dissolve relative mt-20 aspect-1680/720 w-full sm:mt-24">
+        {/* Full width at its own 2.33:1, never cropped, and never masked. The
+            dissolve is for illustrations whose own cream paper does not match
+            the page's; this one has no paper showing at all, it is painted to
+            the edge in colour, and its foreground is dark foliage 277 units
+            from the cream. Fading that out did not make an edge, it made a
+            grey smear across the bottom of the picture. A picture is allowed
+            to have an edge. */}
+        <div className="relative mt-20 aspect-1680/720 w-full sm:mt-24">
           <Image
             src="/images/winery-panorama.webp"
             alt="A painted panorama: a hill village of pale houses with terracotta roofs and a church tower, cypresses down the slope, terraced vineyard rows in the foreground and a lake below the wooded hills."
