@@ -35,6 +35,29 @@ export const GROUNDS = [
   { thing: "A cellar of collector wines", detail: null },
 ] as const;
 
+/**
+ * The subset of GROUNDS a visitor can actually walk into, in reading order.
+ * GROUNDS also carries the family house and the vineyards, which stand on the
+ * estate but are not stops on a visit, and that difference is the whole reason
+ * /vineyards and /visit are not printing the same list. Typing the picks as
+ * GROUNDS' own literal union means a rename there fails the build here rather
+ * than silently dropping a line.
+ */
+const VISITABLE_THINGS: readonly (typeof GROUNDS)[number]["thing"][] = [
+  "The tasting room",
+  "The restaurant",
+  "A small guest hotel",
+  "The olive garden",
+  "The cellar",
+  "A cellar of collector wines",
+];
+
+export const VISITABLE = VISITABLE_THINGS.map((thing) => {
+  const entry = GROUNDS.find((place) => place.thing === thing);
+  if (!entry) throw new Error(`VISITABLE names ${thing}, which is not on GROUNDS`);
+  return entry;
+});
+
 export type Person = {
   name: string;
   role: string;

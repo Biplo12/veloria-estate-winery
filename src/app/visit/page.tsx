@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
-import { ESTATE, GROUNDS } from "@/data/estate";
+import { ESTATE, VISITABLE } from "@/data/estate";
 
 export const metadata: Metadata = {
   title: "Visit",
@@ -62,15 +62,19 @@ export default function VisitPage() {
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
+          {/* What a visitor can walk into, which is not the same list as the
+              one on /vineyards: the family house is lived in and the vineyards
+              are worked, so neither is a stop on a visit. Both lists come from
+              GROUNDS, so they cannot contradict each other. */}
           <Reveal>
             <h2 className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
-              What stands on the grounds.
+              What you can walk into.
             </h2>
             <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
               {ESTATE.openTo} The rest of the year the estate is working, and
-              most of that work happens somewhere dark where there is nothing to
-              watch. This is the whole list, the buildings, the land, and
-              nothing that is not here.
+              most of that work happens somewhere dark where there is nothing
+              to watch. The house is lived in and the vineyards are being
+              worked, so what is left is this.
             </p>
           </Reveal>
 
@@ -78,7 +82,7 @@ export default function VisitPage() {
             <div className="lg:col-span-6">
               <Reveal delay={90}>
                 <ul>
-                  {GROUNDS.map(({ thing, detail }) => (
+                  {VISITABLE.map(({ thing, detail }) => (
                     <li
                       key={thing}
                       className="flex items-baseline justify-between gap-4 border-b border-ink/10 py-4 text-base leading-[1.6] sm:text-lg"

@@ -1,32 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { ESTATE, GROUNDS } from "@/data/estate";
+import { ESTATE, VISITABLE } from "@/data/estate";
 
-/** Everything a visitor can actually walk into, and nothing that is not there:
-    GROUNDS also carries the family house and the vineyards, which stand on the
-    estate but are not stops on a visit. The order is this section's reading
-    order, not the data's. Typing the picks as GROUNDS' own literal union means
-    a rename in @/data/estate fails the build here rather than silently
-    dropping a line. */
-const VISITABLE: readonly (typeof GROUNDS)[number]["thing"][] = [
-  "The tasting room",
-  "The restaurant",
-  "A small guest hotel",
-  "The olive garden",
-  "The cellar",
-  "A cellar of collector wines",
-];
-
-/** A detail reads after the thing — "The cellar, 1978". A null detail is the
+/** A detail reads after the thing, "The cellar, 1978". A null detail is the
     thing on its own. The year stands bare on purpose: GROUNDS records a year,
     not a construction date, and the cellar was already old when Matteo bought
-    the plot in 1978. The hardcoded line here used to read "built in 1978",
-    which claimed more than the canon does. */
-const PLACES = VISITABLE.map((thing) => {
-  const entry = GROUNDS.find((place) => place.thing === thing);
-  return entry?.detail ? `${entry.thing}, ${entry.detail}` : thing;
-});
+    the plot in 1978. The list itself lives in @/data/estate, because /visit
+    prints it too and the two must not drift. */
+const PLACES = VISITABLE.map(({ thing, detail }) =>
+  detail ? `${thing}, ${detail}` : thing,
+);
 
 export function Visit() {
   return (
