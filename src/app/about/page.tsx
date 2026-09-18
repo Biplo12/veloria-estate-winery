@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Onward, type OnwardLink } from "@/components/onward";
 import { PageIntro } from "@/components/page-intro";
@@ -58,9 +59,7 @@ const ONWARD: readonly OnwardLink[] = [
 const EYEBROW =
   "pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft";
 
-const HEADING =
-  "text-3xl font-light leading-[1.15] text-ink sm:text-4xl";
-
+const HEADING = "text-3xl font-light leading-[1.15] text-ink sm:text-4xl";
 
 export default function AboutPage() {
   return (
@@ -198,7 +197,6 @@ export default function AboutPage() {
             </div>
 
             <div>
-
               {/* Four across, so the faces read as a family rather than as a
                   list of staff, and so the right half of the page stops being
                   empty. The portraits are alpha-keyed, so they sit straight on
@@ -206,6 +204,7 @@ export default function AboutPage() {
               <ul className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
                 {FAMILY.map(
                   ({
+                    slug,
                     name,
                     role,
                     dates,
@@ -215,33 +214,42 @@ export default function AboutPage() {
                     portraitHeight,
                     portraitAlt,
                   }) => (
-                    <li key={name}>
-                      {/* Each portrait was trimmed to its own silhouette, so at
+                    <li key={slug}>
+                      {/* The whole card is the link, portrait included. This
+                          grid of four is the index, so the family is not
+                          listed twice anywhere. */}
+                      <Link
+                        href={`/family/${slug}`}
+                        className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
+                      >
+                        {/* Each portrait was trimmed to its own silhouette, so at
                           equal width the narrowest one drew tallest. A fixed
                           height with the figures sitting on the bottom edge puts
                           them back on one baseline and lines the names up. */}
-                      <div className="flex h-56 items-end sm:h-64 lg:h-72">
-                        <Image
-                          src={portrait}
-                          alt={portraitAlt}
-                          width={portraitWidth}
-                          height={portraitHeight}
-                          sizes="(min-width: 1024px) 18rem, (min-width: 640px) 40vw, 70vw"
-                          className="h-full w-auto object-contain object-bottom"
-                        />
-                      </div>
-                      <p className="mt-7 text-base text-ink sm:text-lg">{name}</p>
-                      <p className={`mt-2 ${EYEBROW}`}>
-                        {dates ? `${role} · ${dates}` : role}
-                      </p>
-                      <p className="mt-4 text-base leading-[1.6] text-ink-soft">
-                        {line}
-                      </p>
+                        <div className="flex h-56 items-end sm:h-64 lg:h-72">
+                          <Image
+                            src={portrait}
+                            alt={portraitAlt}
+                            width={portraitWidth}
+                            height={portraitHeight}
+                            sizes="(min-width: 1024px) 18rem, (min-width: 640px) 40vw, 70vw"
+                            className="lift h-full w-auto object-contain object-bottom"
+                          />
+                        </div>
+                        <p className="mt-7 text-base text-ink transition-colors duration-200 group-hover:text-vermilion sm:text-lg">
+                          {name}
+                        </p>
+                        <p className={`mt-2 ${EYEBROW}`}>
+                          {dates ? `${role} · ${dates}` : role}
+                        </p>
+                        <p className="mt-4 text-base leading-[1.6] text-ink-soft">
+                          {line}
+                        </p>
+                      </Link>
                     </li>
                   ),
                 )}
               </ul>
-
             </div>
           </Reveal>
         </div>

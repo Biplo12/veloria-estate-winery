@@ -143,7 +143,7 @@ One hand drew this page. Anything new must obey the same rules.
 
 ## The site
 
-Eleven prerendered pages. There is no journal: the route, its data and its
+Fifteen prerendered pages. There is no journal: the route, its data and its
 section were removed. The landing page is a sequence of sections; every
 nav item is a real route, not an anchor.
 
@@ -152,9 +152,21 @@ nav item is a real route, not an anchor.
 | `/` | hero, wines, vineyards, family, visit |
 | `/about` | the founding, the name, the founder's quote, the family |
 | `/wines`, `/wines/[slug]` | the four wines, and one page each |
+| `/family/[slug]` | one page each for Matteo, Elisa, Lorenzo and Sofia |
 | `/vineyards` | the land, the painted map, 7 → 42 hectares |
 | `/visit` | the tasting room, on the looping video |
 | `/contacts` | how to reach the estate |
+
+There is no `/family` index. The grid of four portraits on `/about` is the
+index, and building a second list of the same four people on its own route
+would be the duplication that `/vineyards` and `/visit` were already pulled
+apart for.
+
+Every page that is not the landing page ends with the same block,
+`<Onward>` in `src/components/onward.tsx`: two routes side by side, each
+under its own rule, and a page never lists itself. The wine and family
+pages pass their own neighbours to it, so the four wines and the four
+people each read as a ring with no dead end.
 
 Facts live in `src/data/` — `wines.ts` and `estate.ts`. **Never retype a
 price, vintage, hectare figure, name or date into a component.** Sections and

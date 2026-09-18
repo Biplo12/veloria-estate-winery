@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Reveal } from "@/components/reveal";
 import { ESTATE, FAMILY, FOUNDER_QUOTE } from "@/data/estate";
@@ -59,6 +60,7 @@ export function Family() {
             {FAMILY.map(
               (
                 {
+                  slug,
                   name,
                   role,
                   dates,
@@ -71,23 +73,30 @@ export function Family() {
               ) => (
                 <Reveal
                   as="li"
-                  key={name}
+                  key={slug}
                   delay={index === 0 ? 0 : index === 1 ? 90 : 180}
                 >
-                  <div className="flex h-36 items-end sm:h-44">
-                    <Image
-                      src={portrait}
-                      alt={portraitAlt}
-                      width={portraitWidth}
-                      height={portraitHeight}
-                      sizes="(min-width: 1024px) 11rem, 40vw"
-                      className="h-full w-auto object-contain object-bottom"
-                    />
-                  </div>
-                  <p className="mt-5 text-base text-ink">{name}</p>
-                  <p className="mt-2 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                    {dates ? `${role}, ${dates}` : role}
-                  </p>
+                  <Link
+                    href={`/family/${slug}`}
+                    className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
+                  >
+                    <div className="flex h-36 items-end sm:h-44">
+                      <Image
+                        src={portrait}
+                        alt={portraitAlt}
+                        width={portraitWidth}
+                        height={portraitHeight}
+                        sizes="(min-width: 1024px) 11rem, 40vw"
+                        className="lift h-full w-auto object-contain object-bottom"
+                      />
+                    </div>
+                    <p className="mt-5 text-base text-ink transition-colors duration-200 group-hover:text-vermilion">
+                      {name}
+                    </p>
+                    <p className="mt-2 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+                      {dates ? `${role}, ${dates}` : role}
+                    </p>
+                  </Link>
                 </Reveal>
               ),
             )}
