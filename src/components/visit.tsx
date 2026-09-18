@@ -117,14 +117,7 @@ export function Visit() {
                 ))}
               </ul>
 
-              {/* The address keeps its middot rhythm, so ESTATE.place, one
-                  comma string, "Siena, Toscana, Italia", is split back into
-                  its parts. It carries Italia, which the hardcoded line left
-                  off, so the line now ends on it. */}
-              <p className="mt-10 pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-white">
-                {[ESTATE.tenuta, ...ESTATE.place.split(", ")].join(" · ")}
-              </p>
-            </Reveal>
+                          </Reveal>
           </div>
         </div>
       </div>

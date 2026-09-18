@@ -12,7 +12,7 @@ import { ESTATE, GROUNDS } from "@/data/estate";
 
 export function Estate() {
   return (
-    <section id="vineyards" className="bg-paper py-24 sm:py-32 lg:py-40">
+    <section id="vineyards" className="bg-paper py-20 sm:py-24 lg:py-28">
       <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
         <Reveal>
           <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
@@ -30,8 +30,8 @@ export function Estate() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-y-16 sm:mt-20 lg:grid-cols-12 lg:gap-x-10">
-          <Reveal className="lg:col-span-7">
+        <div className="mt-12 grid grid-cols-1 gap-y-12 sm:mt-14 lg:grid-cols-12 lg:gap-x-10">
+          <Reveal className="lg:col-span-5">
             <figure>
               <Image
                 src="/images/winery-map-cut.webp"
@@ -47,7 +47,7 @@ export function Estate() {
             </figure>
           </Reveal>
 
-          <Reveal delay={90} className="lg:col-span-4 lg:col-start-9">
+          <Reveal delay={90} className="lg:col-span-5 lg:col-start-7">
             <h3 className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
               On the grounds
             </h3>
@@ -72,7 +72,7 @@ export function Estate() {
         </div>
       </div>
 
-      <div className="band-dissolve relative mt-24 aspect-3360/1680 w-full sm:mt-32">
+      <div className="band-dissolve relative mt-16 aspect-3360/1680 w-full sm:mt-20">
         <Image
           src="/images/vineyard-harvest.webp"
           alt="Two people working down a row of vines, cutting bunches into baskets by hand."

@@ -36,8 +36,16 @@ export default function WinesPage() {
               className="object-cover"
             />
           </div>
-          <figcaption className="mx-auto mt-6 max-w-[86rem] px-6 text-base leading-[1.6] text-ink-soft sm:mt-8 sm:px-10 sm:text-lg">
-            Left to right: {WINES.map((wine) => wine.name).join(", ")}.
+          <figcaption className="mx-auto mt-6 max-w-[62ch] px-6 text-base leading-[1.6] text-ink-soft sm:mt-8 sm:px-10 sm:text-lg">
+            Every bottle is numbered before it leaves the cellar. Nothing on this
+            site sells wine. To ask about a case, or about tasting them here,{" "}
+            <Link
+              href="/contacts"
+              className="underline decoration-ink/30 underline-offset-4 transition-colors duration-200 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
+            >
+              write to us
+            </Link>
+            .
           </figcaption>
         </Reveal>
       </section>
@@ -92,21 +100,6 @@ export default function WinesPage() {
               </li>
             ))}
           </ol>
-
-          <Reveal>
-            <p className="mt-20 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:mt-24 sm:text-lg">
-              Every bottle is numbered before it leaves the cellar. Nothing on
-              this site sells wine, to ask about a case, or about tasting them
-              here,{" "}
-              <Link
-                href="/contacts"
-                className="underline decoration-ink/30 underline-offset-4 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
-              >
-                write to us
-              </Link>
-              .
-            </p>
-          </Reveal>
         </div>
       </section>
     </main>
