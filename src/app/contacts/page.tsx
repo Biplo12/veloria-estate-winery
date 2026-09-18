@@ -28,6 +28,19 @@ export default function ContactsPage() {
         lead={`${ESTATE.openTo} Write or telephone and one of the people who works here will answer, there is nothing automatic at this end.`}
       />
 
+      {/* The way in. Painted edge to edge, so it bleeds the full width at its
+          own 21:9 and dissolves top and bottom rather than sitting on the page
+          as a rectangle. */}
+      <div className="band-dissolve relative aspect-3360/1440 w-full">
+        <Image
+          src="/images/winery-gate.webp"
+          alt="A painted gravel drive running up between cypresses to an open iron gate in a low stone wall, with tile-roofed farm buildings among the trees on either side."
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
           <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-12 lg:gap-x-8">
