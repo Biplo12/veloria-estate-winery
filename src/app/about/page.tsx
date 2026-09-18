@@ -70,10 +70,23 @@ export default function AboutPage() {
               <h2 className={`mt-6 ${HEADING}`}>
                 The name is the whole idea.
               </h2>
+
+              {/* Small, and on its own paper rather than in a frame: this
+                  sheet's cream is 2 units from the page's, so it has no edge
+                  to hide and needs neither a mask nor a plate. It fills the
+                  space under a two-line heading, which was empty. */}
+              <Image
+                src="/images/grapes-2.webp"
+                alt="A painted bunch of grapes, dark and red against a band of ochre."
+                width={1024}
+                height={1024}
+                sizes="(min-width: 1024px) 22rem, 60vw"
+                className="mt-10 h-auto w-full max-w-[22rem]"
+              />
             </div>
 
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="mt-12 max-w-[26ch] text-2xl font-light leading-[1.25] text-ink sm:mt-16 sm:text-3xl">
+              <p className="max-w-[26ch] text-2xl font-light leading-[1.25] text-ink sm:text-3xl">
                 {ESTATE.nameMeaning}
               </p>
               <p className="mt-10 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
@@ -91,45 +104,40 @@ export default function AboutPage() {
             with no grid above it to act on, so it fell into a narrow left
             column and left half the page empty. */}
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-6">
               <p className={EYEBROW}>{ESTATE.tenuta}</p>
               <h2 className={`mt-6 ${HEADING}`}>
                 It started in barrels under the house.
               </h2>
+              <div className="mt-10 max-w-[58ch] space-y-6">
+                {STORY.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 24)}
+                    className="text-base leading-[1.6] text-ink-soft sm:text-lg"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
 
-            <div className="max-w-[62ch] space-y-6 lg:col-span-7 lg:col-start-6">
-              {STORY.map((paragraph) => (
-                <p
-                  key={paragraph.slice(0, 24)}
-                  className="text-base leading-[1.6] text-ink-soft sm:text-lg"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+            {/* The other side of the page, and the other side of the pair:
+                one picture left, one right, both small. The page already
+                carries one full-width painting and did not need a second. */}
+            <Image
+              src="/images/collecting-grapes.webp"
+              alt="Two pickers in the vines, one up a ladder in the canopy and one filling a bucket below."
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 28rem, 80vw"
+              className="h-auto w-full lg:col-span-5 lg:col-start-8"
+            />
           </Reveal>
         </div>
 
-        {/* The cellar the paragraph above describes, and the first picture on
-            the page: everything before it was type. Unlike the panorama it
-            does get the dissolve, because its edges are its own paper rather
-            than its subject, a flat green wash at the top and a pale pink
-            floor at the bottom sitting 132 and 46 units off the page cream.
-            Both are even enough to fade without smearing. */}
-        <div className="band-dissolve relative mt-20 aspect-2912/1632 w-full sm:mt-24">
-          <Image
-            src="/images/barrels-of-wine-2.webp"
-            alt="The ageing cellar: barrels stacked two high in rows under a vaulted ceiling, and a man in an apron drawing a glass from one of them."
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="mt-20 sm:mt-24">
+          <Reveal className="mt-16 sm:mt-20">
             <ul>
               {MOMENTS.map(({ year, what }) => (
                 <li
