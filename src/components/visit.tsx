@@ -58,52 +58,50 @@ export function Visit() {
       />
 
       <div className="mx-auto w-full max-w-[86rem] px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32">
-        <div className="grid grid-cols-1 gap-y-14 lg:grid-cols-12 lg:items-end lg:gap-x-8">
-          <div className="lg:col-span-6">
-            <Reveal>
-              <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-white">
-                Visiting
-              </p>
-              <h2 className="mt-6 max-w-[17ch] text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-[3.5rem]">
-                Come up the hill and stay for the afternoon.
-              </h2>
-            </Reveal>
+        <div className="max-w-[46rem]">
+          <Reveal>
+            <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-white">
+              Visiting
+            </p>
+            <h2 className="mt-6 max-w-[17ch] text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-[3.5rem]">
+              Come up the hill and stay for the afternoon.
+            </h2>
+          </Reveal>
 
-            <Reveal delay={90}>
-              <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-white/85 sm:text-xl">
-                {ESTATE.openTo} Tastings are poured at one long table with the
-                shutters open, and nobody is hurried back down the hill.
-              </p>
+          <Reveal delay={90}>
+            <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-white/85 sm:text-xl">
+              {ESTATE.openTo} Tastings are poured at one long table with the
+              shutters open, and nobody is hurried back down the hill.
+            </p>
 
-              <Link
-                href="/contacts"
-                className="mt-10 inline-flex items-center bg-vine px-8 py-4 text-ink transition-colors duration-200 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vine"
-              >
-                <span className="pl-[0.3em] text-[0.72rem] uppercase tracking-[0.3em]">
-                  Book a tasting
-                </span>
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className="lg:col-span-5 lg:col-start-8">
-            <Reveal delay={180}>
-              {/* One column. Two columns of top-bordered items drew a pair of
-                  broken ladders that never lined up with each other. */}
-              <ul className="border-t border-white/20">
-                {PLACES.map((place) => (
-                  <li
-                    key={place}
-                    className="border-b border-white/20 py-3.5 text-base leading-[1.6] text-white sm:text-lg"
-                  >
-                    {place}
-                  </li>
-                ))}
-              </ul>
-
-                          </Reveal>
-          </div>
+            <Link
+              href="/contacts"
+              className="mt-10 inline-flex items-center bg-vine px-8 py-4 text-ink transition-colors duration-200 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vine"
+            >
+              <span className="pl-[0.3em] text-[0.72rem] uppercase tracking-[0.3em]">
+                Book a tasting
+              </span>
+            </Link>
+          </Reveal>
         </div>
+
+        {/* The places run as one line along the foot of the painting, the way
+            a caption does. They were a column of six ruled rows standing on
+            the picture, which is a table, and a table is the one thing this
+            is not: it is a list of rooms you can walk into, with no second
+            column to line anything up against. */}
+        <Reveal delay={180} className="mt-20 border-t border-white/25 pt-8 sm:mt-28">
+          <ul className="flex flex-wrap items-baseline gap-x-7 gap-y-3">
+            {PLACES.map((place) => (
+              <li
+                key={place}
+                className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-white/85"
+              >
+                {place}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );
