@@ -12,7 +12,7 @@ export function Journal() {
           <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
             Journal
           </p>
-          <h2 className="mt-6 max-w-[20ch] text-4xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+          <h2 className="mt-6 max-w-[20ch] text-3xl font-light leading-[1.1] text-ink sm:text-4xl lg:text-[2.5rem]">
             Three notes from the estate.
           </h2>
           <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">

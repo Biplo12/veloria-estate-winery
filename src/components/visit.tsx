@@ -79,7 +79,7 @@ export function Visit() {
               <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-white">
                 Visiting
               </p>
-              <h2 className="mt-6 max-w-[17ch] text-4xl font-light leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mt-6 max-w-[17ch] text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-[3.5rem]">
                 Come up the hill and stay for the afternoon.
               </h2>
             </Reveal>

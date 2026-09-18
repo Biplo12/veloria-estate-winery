@@ -64,8 +64,8 @@ export default function VineyardsPage() {
               <Image
                 src="/images/winery-map-cut.webp"
                 alt="A painted map of the estate seen from above: vineyard parcels in bands of green and olive, pale roads winding between them, and the family house near the centre."
-                width={1009}
-                height={1024}
+                width={2018}
+                height={2048}
                 sizes="(min-width: 1024px) 48rem, 100vw"
                 className="mx-auto h-auto w-full max-w-[48rem]"
               />

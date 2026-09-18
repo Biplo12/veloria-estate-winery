@@ -29,7 +29,7 @@ export function Wines() {
     <section id="wines" className="bg-paper py-24 sm:py-32 lg:py-40">
       <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
         <Reveal>
-          <h2 className="max-w-[20ch] text-4xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+          <h2 className="max-w-[20ch] text-3xl font-light leading-[1.1] text-ink sm:text-4xl lg:text-[2.5rem]">
             Four wines, and no plans for a fifth.
           </h2>
         </Reveal>

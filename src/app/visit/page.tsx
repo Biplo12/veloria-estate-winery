@@ -105,8 +105,8 @@ export default function VisitPage() {
                 <Image
                   src="/images/winery-map-cut.webp"
                   alt="A painted aerial of the estate: the house and its bell tower on the ridge, a pale track dropping past the vineyard blocks, with cypresses and woodland on either side."
-                  width={1009}
-                  height={1024}
+                  width={2018}
+                  height={2048}
                   sizes="(min-width: 1024px) 32rem, 100vw"
                   className="h-auto w-full"
                 />

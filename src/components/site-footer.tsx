@@ -42,7 +42,7 @@ export function SiteFooter() {
             height={722}
             className="h-16 w-auto sm:h-20"
           />
-          <h2 className="mt-10 max-w-[16ch] text-4xl font-light leading-[1.1] text-paper sm:text-5xl lg:text-6xl">
+          <h2 className="mt-10 max-w-[16ch] text-3xl font-light leading-[1.1] text-paper sm:text-4xl lg:text-[2.5rem]">
             Come and see the place.
           </h2>
           <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-paper/70 sm:text-xl">

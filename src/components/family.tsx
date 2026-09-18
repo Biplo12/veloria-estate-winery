@@ -21,7 +21,7 @@ export function Family() {
           <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
             The family
           </p>
-          <h2 className="mt-6 max-w-[16ch] text-4xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+          <h2 className="mt-6 max-w-[16ch] text-3xl font-light leading-[1.1] text-ink sm:text-4xl lg:text-[2.5rem]">
             Four names on the same slope.
           </h2>
         </Reveal>
@@ -46,7 +46,7 @@ export function Family() {
 
           <Reveal delay={90} className="lg:col-span-10">
             <blockquote>
-              <p className="max-w-[20ch] text-4xl font-light leading-[1.1] text-ink sm:text-6xl lg:text-7xl">
+              <p className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl lg:text-[3rem]">
                 {MATTEO}
               </p>
               <cite className="mt-8 block text-[0.68rem] uppercase not-italic tracking-[0.3em] text-ink-soft sm:mt-10">

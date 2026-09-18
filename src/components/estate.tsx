@@ -22,7 +22,7 @@ export function Estate() {
           <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
             {ESTATE.tenuta}
           </p>
-          <h2 className="mt-6 max-w-[16ch] text-4xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+          <h2 className="mt-6 max-w-[16ch] text-3xl font-light leading-[1.1] text-ink sm:text-4xl lg:text-[2.5rem]">
             Forty-two hectares, bought in pieces.
           </h2>
           <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">
@@ -39,8 +39,8 @@ export function Estate() {
               <Image
                 src="/images/winery-map-cut.webp"
                 alt="A painted aerial map of the estate: vineyard parcels in bands of green, the pale roads between them, and the family house with its tower near the centre."
-                width={1009}
-                height={1024}
+                width={2018}
+                height={2048}
                 sizes="(min-width: 1024px) 56vw, 100vw"
                 className="h-auto w-full"
               />

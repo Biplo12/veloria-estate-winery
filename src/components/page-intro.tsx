@@ -28,7 +28,7 @@ export function PageIntro({
         <Reveal
           as="h1"
           delay={eyebrow ? 90 : 0}
-          className="mt-5 max-w-[16ch] text-4xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl"
+          className="mt-5 max-w-[16ch] text-4xl font-light leading-[1.05] text-ink sm:text-5xl lg:text-[3.25rem]"
         >
           {title}
         </Reveal>

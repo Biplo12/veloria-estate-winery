@@ -18,7 +18,7 @@ export function TimeScale() {
   return (
     <section className="bg-paper py-24 sm:py-32">
       <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-        <h2 className="max-w-[18ch] text-4xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+        <h2 className="max-w-[18ch] text-4xl font-light leading-[1.05] text-ink sm:text-5xl lg:text-[3.5rem]">
           Time is an ingredient.
         </h2>
         <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">

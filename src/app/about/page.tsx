@@ -144,7 +144,7 @@ export default function AboutPage() {
               className="h-auto w-16 sm:w-20"
             />
             <blockquote className="mt-10 sm:mt-12">
-              <p className="max-w-[20ch] text-3xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+              <p className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl lg:text-[3rem]">
                 “{FOUNDER_QUOTE.text}”
               </p>
               <cite
