@@ -3,9 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
-import { BACK_LABEL } from "@/data/estate";
 import { WINES, findWine, labelNumber, price } from "@/data/wines";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -44,18 +42,16 @@ export default async function WinePage({ params }: Props) {
 
   return (
     <main className="bg-paper">
-      <PageIntro
-        eyebrow={`${wine.vintage} · ${wine.grapes}`}
-        title={wine.name}
-        lead={wine.summary}
-      />
-
-      {/* The bottle is alpha-keyed, so it stands on the cream with no edge of
-          its own. Bottom-aligned with the facts beside it. */}
-      <section className="pb-16 sm:pb-24">
+      {/* Everything that identifies the wine, in one place. It used to be
+          three: the vintage and grapes in a page intro, the summary across
+          the top right, then the glass, the ageing and the price a screen
+          further down beside the foot of the bottle, with a void between
+          them. The bottle is alpha-keyed, so it stands on the cream with no
+          edge of its own. */}
+      <section className="pb-16 pt-16 sm:pb-24 sm:pt-20">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="flex justify-center lg:col-span-6 lg:justify-start">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-x-8">
+            <Reveal className="flex justify-center lg:col-span-5 lg:justify-start">
               <Image
                 src={wine.image}
                 alt={wine.alt}
@@ -65,24 +61,36 @@ export default async function WinePage({ params }: Props) {
                 preload
                 className="h-auto w-full max-w-[18rem] sm:max-w-[22rem]"
               />
-            </div>
+            </Reveal>
 
-            <dl className="lg:col-span-6 lg:col-start-7">
-              {facts.map(({ term, detail }) => (
-                <div
-                  key={term}
-                  className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 border-b border-ink/10 py-5 first:border-t first:border-ink/10"
-                >
-                  <dt className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                    {term}
-                  </dt>
-                  <dd className="max-w-[42ch] text-base leading-[1.6] text-ink sm:text-lg">
-                    {detail}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
+            <Reveal delay={90} className="lg:col-span-6 lg:col-start-7">
+              <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+                {wine.vintage} · {wine.grapes}
+              </p>
+              <h1 className="mt-5 text-4xl font-light leading-[1.05] text-ink sm:text-5xl lg:text-[3.25rem]">
+                {wine.name}
+              </h1>
+              <p className="mt-7 max-w-[46ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">
+                {wine.summary}
+              </p>
+
+              <dl className="mt-12">
+                {facts.map(({ term, detail }) => (
+                  <div
+                    key={term}
+                    className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 border-b border-ink/10 py-5 first:border-t first:border-ink/10"
+                  >
+                    <dt className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+                      {term}
+                    </dt>
+                    <dd className="max-w-[42ch] text-base leading-[1.6] text-ink sm:text-lg">
+                      {detail}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -113,34 +121,29 @@ export default async function WinePage({ params }: Props) {
               <h2 className="text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
                 Every bottle is numbered
               </h2>
-              <p className="mt-6 text-base leading-[1.6] text-ink-soft sm:text-lg">
-                The number is written on the front label before the bottle
-                leaves the cellar, beside how many were made of this vintage.
-                This is how one of them reads.
+              <p className="mt-6 max-w-[34ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+                Written on the front label before the bottle leaves the
+                cellar. This is how one of them reads.
               </p>
             </div>
 
-            <div className="border border-ink/15 bg-ink/5 px-6 py-8 sm:px-10 sm:py-10 lg:col-span-7 lg:col-start-6">
+            {/* The front label set as a label, not as a card. It was a grey
+                plate with a border, which is the one surface this site does
+                not have: nothing here sits on anything but the cream.
+
+                The back label came off with the plate. It was printed here
+                and again in the footer, word for word, about six hundred
+                pixels apart, and the footer says it on every page. */}
+            <div className="lg:col-span-7 lg:col-start-6">
               <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
                 {labelNumber(wine)}
               </p>
-              <p className="mt-4 pl-[0.3em] text-sm uppercase tracking-[0.3em] text-ink sm:text-base">
+              <p className="mt-5 pl-[0.3em] text-xl font-light uppercase tracking-[0.3em] text-ink sm:text-2xl">
                 {wine.name}
               </p>
-              <p className="mt-2 pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+              <p className="mt-3 pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
                 Vintage {wine.vintage}
               </p>
-
-              <div className="mt-8 border-t border-ink/15 pt-6">
-                {BACK_LABEL.map((line) => (
-                  <p
-                    key={line}
-                    className="text-base leading-[1.6] text-ink-soft"
-                  >
-                    {line}
-                  </p>
-                ))}
-              </div>
             </div>
           </Reveal>
         </div>
