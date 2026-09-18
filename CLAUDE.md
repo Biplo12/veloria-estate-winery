@@ -75,9 +75,12 @@ collector wines.
 - **Lorenzo Bellandi** — Winemaker. Matteo's son; runs production today.
 - **Sofia Bellandi** — Estate Director.
 
-> Open question: the source brief calls Sofia "fourth generation", which does not
-> line up with a 1978 founding by Matteo (that would make her third). Settle this
-> before it reaches an About page.
+Sofia is the **fourth generation on the land, not of the winery**. The brief calls
+her fourth generation while dating the founding to 1978, which would make her
+third — but Matteo was "the son of a local farmer" and the family house is from
+1892, so the Bellandi were farming this slope long before there was a label.
+Count from Matteo's father: father, Matteo, Lorenzo, Sofia. Copy must say "fourth
+generation on this land" and never "fourth generation of the winery".
 
 ## Numbered labels
 
@@ -109,6 +112,29 @@ piecemeal; the palette tokens in `globals.css` are the contract.
 Type is Jost alone: tracked caps for the wordmark and labels, light weights at
 large sizes for statements.
 
+## Design contract
+
+One hand drew this page. Anything new must obey the same rules.
+
+- **Colour** — only the tokens above, used as `bg-*` / `text-*` / `border-*`.
+  Never a hex value in a component, never grey, black or white as a surface.
+- **Type** — Jost alone, applied on `body`. Section heading
+  `text-4xl font-light leading-[1.1] text-ink sm:text-5xl lg:text-6xl`; lead
+  `text-lg leading-[1.6] text-ink-soft sm:text-xl`; eyebrow
+  `text-[0.68rem] uppercase tracking-[0.3em]`. Tracked caps always carry a
+  matching `pl-[0.3em]` so the trailing letterspace does not break centring.
+- **Layout** — section `bg-paper py-24 sm:py-32 lg:py-40`, inner container
+  `mx-auto max-w-[86rem] px-6 sm:px-10`. Full-bleed bands sit outside it.
+- **Motion** — exactly one primitive: `<Reveal>` in `src/components/reveal.tsx`,
+  a 16px fade-and-rise on first entry, driven by IntersectionObserver and keyed
+  off `data-reveal` in `globals.css`. Stagger with `delay` in 90ms steps, never
+  more than three. No parallax, scale, or scroll effects. It reveals immediately
+  under `prefers-reduced-motion`, and a `<noscript>` rule in `layout.tsx` keeps
+  content visible without scripting.
+- **Voice** — plain, unhurried, British-leaning English. Sentence case. No
+  "discover", "experience", "journey", "nestled", no superlatives, no
+  exclamation marks. Tell, do not sell.
+
 ## Longer-term scope
 
 The project is meant to grow past a landing page: shop, tasting reservations,
@@ -139,6 +165,24 @@ Use a `-cut` file whenever a motif sits on anything other than plain cream.
 `wine-luna-bianca` is painted as dark green glass, which reads as a red. It is the
 one asset that disagrees with the canon; regenerate it paler if the wines section
 makes that obvious.
+
+## Moving image
+
+`public/video/tasting-room.mp4` is the tasting room animated — 832x464, silent,
+574 KB, already cut into a seamless forward-then-reverse loop so it repeats with
+no visible jump (the source was a 5.5 MB 5-second clip that cut hard). Poster
+frame: `public/images/tasting-room-poster.webp`. It has no audio track, so never
+render a mute control, and always hide it under `motion-reduce:` with the poster
+showing underneath.
+
+## Icons and sharing
+
+`src/app/icon.png`, `apple-icon.png` and `opengraph-image.jpg` are generated from
+`logo-cut` and the hero. The OG image carries **no words** — Jost is only present
+as a woff2 subset, which cannot be rendered into an image, and a card shows the
+title in the platform's own type anyway. At 32px the mark reads as a warm pink and
+green blob rather than a legible object; a simplified mark would serve the favicon
+better if the brand ever gets one.
 
 ## Paper colours do not match
 
