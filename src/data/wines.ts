@@ -19,7 +19,12 @@ export type Wine = {
   ageing: string;
   /** Bottles made of this vintage — the numbered label on every one. */
   bottles: number;
-  /** The painted bottle, alpha-keyed so it sits on any ground. */
+  /**
+   * The painted bottle, alpha-keyed and redrawn onto one 900x1200 canvas with
+   * the glass centred, scaled to a common height and standing on a common
+   * baseline. Each was trimmed to its own brushwork first, which put the bottle
+   * at a different place and size in every file and made a row of them jump.
+   */
   image: string;
   imageWidth: number;
   imageHeight: number;
@@ -42,8 +47,8 @@ export const WINES: Wine[] = [
     ageing: "Twelve months in old French oak, then six in bottle.",
     bottles: 24000,
     image: "/images/wine-rosso-cut.webp",
-    imageWidth: 957,
-    imageHeight: 1023,
+    imageWidth: 900,
+    imageHeight: 1200,
     alt: "A painted dark green bottle with a plain cream label, against a coral brushstroke.",
   },
   {
@@ -61,8 +66,8 @@ export const WINES: Wine[] = [
     ageing: "Thirty months in French oak, then at least twelve in bottle.",
     bottles: 12000,
     image: "/images/wine-riserva-cut.webp",
-    imageWidth: 442,
-    imageHeight: 679,
+    imageWidth: 900,
+    imageHeight: 1200,
     alt: "A painted deep red bottle with a gold and dark label banded in red.",
   },
   {
@@ -80,8 +85,8 @@ export const WINES: Wine[] = [
     ageing: "Four months in steel. No oak.",
     bottles: 9000,
     image: "/images/wine-luna-bianca-cut.webp",
-    imageWidth: 546,
-    imageHeight: 687,
+    imageWidth: 900,
+    imageHeight: 1200,
     alt: "A painted bottle surrounded by olive leaves and coral fronds.",
   },
   {
@@ -99,8 +104,8 @@ export const WINES: Wine[] = [
     ageing: "Thirty-six months in French oak, then two years in bottle.",
     bottles: 2400,
     image: "/images/wine-vecchia-vigna-cut.webp",
-    imageWidth: 701,
-    imageHeight: 712,
+    imageWidth: 900,
+    imageHeight: 1200,
     alt: "A painted dark bottle with a faded, muted label against a coral brushstroke.",
   },
 ];

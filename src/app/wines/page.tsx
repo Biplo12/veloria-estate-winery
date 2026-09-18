@@ -12,24 +12,6 @@ export const metadata: Metadata = {
     "The four wines made at Tenuta Veloria, Veloria Rosso, Bellandi Riserva, Luna Bianca and Veloria Vecchia Vigna, with what is in each glass and how long it waited.",
 };
 
-/**
- * Every bottle was painted on its own sheet, and the sheets do not agree about
- * how much paint belongs around a bottle: the Rosso stands in the middle of its
- * own with room on all four sides, the Riserva very nearly fills its own. Given
- * one frame each, the Rosso bottle would draw at half the height of the Riserva
- * and the column would read as broken rather than painted. So each frame is
- * sized to the painting inside it, and the four bottles come out level.
- *
- * These are measurements of the artwork, not facts about the wine — anything
- * about the wine itself is in @/data/wines.
- */
-const FRAME: Record<string, string> = {
-  rosso: "max-h-[18rem] sm:max-h-[21.5rem] lg:max-h-[22rem]",
-  riserva: "max-h-[12rem] sm:max-h-[14rem] lg:max-h-[14.5rem]",
-  "luna-bianca": "max-h-[11.5rem] sm:max-h-[13.5rem] lg:max-h-[14rem]",
-  "vecchia-vigna": "max-h-[13rem] sm:max-h-[15.5rem] lg:max-h-[16rem]",
-};
-
 export default function WinesPage() {
   return (
     <main className="bg-paper">
@@ -78,9 +60,7 @@ export default function WinesPage() {
                       width={wine.imageWidth}
                       height={wine.imageHeight}
                       sizes="(min-width: 640px) 21rem, 17rem"
-                      className={`h-auto w-auto max-w-full ${
-                        FRAME[wine.slug] ?? "max-h-[14rem] sm:max-h-[17rem]"
-                      }`}
+                      className="h-auto w-full max-w-[14rem] sm:max-w-[17rem]"
                     />
                   </div>
 

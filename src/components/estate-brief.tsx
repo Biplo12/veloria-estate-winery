@@ -1,5 +1,11 @@
 import Image from "next/image";
 
+/**
+ * The colophon. It speaks as the person who built the site, not as the estate,
+ * so it stays short: three notes, not a second telling of the history that the
+ * whole page above has already given. It was 241 words, a third of the landing
+ * page, and most of that was the estate's own story said a second time.
+ */
 type Column = {
   heading: string;
   body: string;
@@ -11,16 +17,16 @@ type Column = {
 const COLUMNS: Column[] = [
   {
     heading: "About",
-    body: "Veloria is a family estate on the southern hills of Siena, working forty-two hectares that started as seven. Matteo Bellandi made the first vintages in barrels under the family house in 1978. The same family still picks by hand, ferments in small batches, and waits, some wines for three years in French oak before anyone is allowed near them.",
+    body: "A family estate on the southern hills of Siena. Forty-two hectares that began as seven, still worked by the Bellandi.",
   },
   {
     heading: "Task",
-    body: "Give the estate a place online that sells bottles and books tastings without flattening four decades of patience into a product grid. It had to read as a house that has been here a while, and still behave like something built this year.",
+    body: "A place online that sells bottles and books tastings without flattening four decades of patience into a product grid.",
     offset: true,
   },
   {
     heading: "Solution",
-    body: "Commissioned gouache illustrations carry the whole interface, and every colour on the page is sampled out of the paintings themselves, the foliage, the roof, the red of a dress in the rows. Type stays out of their way: one geometric face, tracked wide and set like a label.",
+    body: "Commissioned gouache carries the whole interface, and every colour is sampled from the paintings themselves. One typeface, tracked wide and set like a label.",
     offset: true,
     accent: true,
   },

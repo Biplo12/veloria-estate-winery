@@ -110,7 +110,6 @@ export const NAV_LEFT: NavLink[] = [
 ];
 
 export const NAV_RIGHT: NavLink[] = [
-  { label: "journal", href: "/journal" },
   { label: "visit", href: "/visit" },
   { label: "contacts", href: "/contacts" },
 ];

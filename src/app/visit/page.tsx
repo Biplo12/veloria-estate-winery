@@ -26,9 +26,14 @@ export default function VisitPage() {
           anyone who asked for less motion, a loop nobody can pause has no
           business playing then. The painting has no audio track at all, so
           there is nothing here to mute. */}
-      <section>
-        <figure>
-          <div className="band-dissolve relative aspect-4/3 w-full sm:aspect-832/464 sm:max-h-[78svh]">
+      {/* Held inside the container rather than bled to the edge. The painting
+          was filmed at 832px; across a 1920px screen that is well under 1:1 and
+          the brushwork breaks up. At the container's 1376px the 1664px file
+          oversamples it instead. Nothing here invents detail that was never
+          filmed, it only stops the browser stretching what there is. */}
+      <section className="mx-auto max-w-[86rem] px-6 sm:px-10">
+        <div>
+          <div className="relative aspect-4/3 w-full overflow-hidden sm:aspect-832/464 sm:max-h-[78svh]">
             <Image
               src="/images/tasting-room-poster.webp"
               alt="The tasting room: two people at the long wooden table, a bottle and glasses between them, the shutters thrown open on the hills beyond."
@@ -50,13 +55,7 @@ export default function VisitPage() {
               <source src="/video/tasting-room.mp4" type="video/mp4" />
             </video>
           </div>
-
-          <figcaption className="mx-auto mt-6 max-w-[86rem] px-6 sm:mt-8 sm:px-10">
-            <span className="block pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-              The tasting room, shutters open
-            </span>
-          </figcaption>
-        </figure>
+        </div>
       </section>
 
       <section className="py-16 sm:py-24">

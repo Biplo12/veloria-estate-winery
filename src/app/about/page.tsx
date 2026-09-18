@@ -129,12 +129,13 @@ export default function AboutPage() {
           </Reveal>
         </div>
 
-        {/* Painted on its own sheet of cream, so it bleeds the full width and
-            dissolves at the edges rather than sitting on the page as a box. */}
-        <div className="band-dissolve relative mt-20 aspect-square w-full sm:mt-24 sm:aspect-3/2 lg:aspect-16/9">
+        {/* The panorama is painted to the edge of its sheet, so it bleeds the
+            full width at its own 2.33:1 and dissolves top and bottom rather
+            than sitting on the page as a box. No crop: the ratio is the file's. */}
+        <div className="band-dissolve relative mt-20 aspect-1680/720 w-full sm:mt-24">
           <Image
-            src="/images/winery-next-to-hill.webp"
-            alt="A painted hillside: white houses with terracotta roofs and dark cypresses on the slope, a church tower on the ridge above them, wooded hills behind and a river beyond."
+            src="/images/winery-panorama.webp"
+            alt="A painted panorama: a hill village of pale houses with terracotta roofs and a church tower, cypresses down the slope, terraced vineyard rows in the foreground and a lake below the wooded hills."
             fill
             sizes="100vw"
             className="object-cover"

@@ -143,7 +143,8 @@ One hand drew this page. Anything new must obey the same rules.
 
 ## The site
 
-Fourteen prerendered pages. The landing page is a sequence of sections; every
+Eleven prerendered pages. There is no journal: the route, its data and its
+section were removed. The landing page is a sequence of sections; every
 nav item is a real route, not an anchor.
 
 | Route | What it is |
@@ -152,11 +153,10 @@ nav item is a real route, not an anchor.
 | `/about` | the founding, the name, the founder's quote, the family |
 | `/wines`, `/wines/[slug]` | the four wines, and one page each |
 | `/vineyards` | the land, the painted map, 7 → 42 hectares |
-| `/journal`, `/journal/[slug]` | notes from the estate |
 | `/visit` | the tasting room, on the looping video |
 | `/contacts` | how to reach the estate |
 
-Facts live in `src/data/` — `wines.ts`, `estate.ts`, `journal.ts`. **Never retype a
+Facts live in `src/data/` — `wines.ts` and `estate.ts`. **Never retype a
 price, vintage, hectare figure, name or date into a component.** Sections and
 routes both read from there, so the two can never drift apart.
 
@@ -195,6 +195,13 @@ Use a `-cut` file whenever a motif sits on anything other than plain cream.
 | Veloria Vecchia Vigna 2016 | `wine-vecchia-vigna.webp` |
 | all four together | `bottles-of-wine.webp` |
 
+The four `-cut` bottles were each trimmed to their own brushwork, which put the
+glass at a different place and size in every file, so a row of them jumped. They
+are now redrawn onto one 900x1200 canvas with the glass centred, scaled to a
+common height and standing on a common baseline. **Keep that canvas.** Trimming
+one of them again reintroduces the fault, and the same thing happened to the
+portraits.
+
 `wine-luna-bianca` is painted as dark green glass, which reads as a red. It is the
 one asset that disagrees with the canon; regenerate it paler if the wines section
 makes that obvious.
@@ -212,10 +219,17 @@ The source sheet held five figures; the woman in the navy apron is kept as
 older man, because he is remembered as the founder who died in 2019; Lorenzo
 reads a little young for fifty.
 
+## Panorama
+
+`winery-panorama.webp` is 1680x720. It is painted to the edge of its sheet, so it
+bleeds full width at its own ratio with `.band-dissolve` and is never cropped to
+a different aspect.
+
 ## Moving image
 
-`public/video/tasting-room.mp4` is the tasting room animated — 832x464, silent,
-574 KB, already cut into a seamless forward-then-reverse loop so it repeats with
+`public/video/tasting-room.mp4` is the tasting room animated — filmed at 832x464,
+silent,
+2 MB at 1664x928 after a lanczos pass, already cut into a seamless forward-then-reverse loop so it repeats with
 no visible jump (the source was a 5.5 MB 5-second clip that cut hard). Poster
 frame: `public/images/tasting-room-poster.webp`. It has no audio track, so never
 render a mute control, and always hide it under `motion-reduce:` with the poster

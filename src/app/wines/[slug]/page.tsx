@@ -10,23 +10,6 @@ import { WINES, findWine, labelNumber, price } from "@/data/wines";
 
 type Props = { params: Promise<{ slug: string }> };
 
-/**
- * Each bottle was painted on its own sheet with its own amount of paint around
- * it — the Rosso stands in the middle of a wide one, the Riserva very nearly
- * fills its own. One frame for all four would draw four bottles at four
- * different sizes, so the frame is sized to the painting it holds and the
- * bottle lands at the same height on every wine's page.
- *
- * These are measurements of the artwork, not facts about the wine — anything
- * about the wine itself is in @/data/wines.
- */
-const FRAME: Record<string, string> = {
-  rosso: "max-h-[19.5rem] sm:max-h-[24.5rem] lg:max-h-[26rem]",
-  riserva: "max-h-[13rem] sm:max-h-[16.5rem] lg:max-h-[17.5rem]",
-  "luna-bianca": "max-h-[12.5rem] sm:max-h-[15.5rem] lg:max-h-[16.5rem]",
-  "vecchia-vigna": "max-h-[14.5rem] sm:max-h-[18rem] lg:max-h-[19rem]",
-};
-
 export async function generateStaticParams() {
   return WINES.map((wine) => ({ slug: wine.slug }));
 }
@@ -80,9 +63,7 @@ export default async function WinePage({ params }: Props) {
                 height={wine.imageHeight}
                 sizes="(min-width: 1024px) 25rem, (min-width: 640px) 23rem, 18rem"
                 preload
-                className={`h-auto w-auto max-w-full ${
-                  FRAME[wine.slug] ?? "max-h-[16rem] sm:max-h-[20rem]"
-                }`}
+                className="h-auto w-full max-w-[18rem] sm:max-w-[22rem]"
               />
             </div>
 
