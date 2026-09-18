@@ -56,26 +56,44 @@ export function Family() {
           </Reveal>
         </div>
 
-        <Reveal>
-          <ul className="mt-24 sm:mt-32">
-            {FAMILY.map(({ name, role, dates, line }) => (
-              <li
+        {/* Four across: the faces read as a family, and the row fills the
+            width the old list left empty on the right. */}
+        <ul className="mt-24 grid grid-cols-2 gap-x-8 gap-y-12 sm:mt-32 lg:grid-cols-4">
+          {FAMILY.map(
+            (
+              {
+                name,
+                role,
+                dates,
+                portrait,
+                portraitWidth,
+                portraitHeight,
+                portraitAlt,
+              },
+              index,
+            ) => (
+              <Reveal
+                as="li"
                 key={name}
-                className="flex flex-col gap-y-3 border-t border-ink/10 py-7 sm:flex-row sm:gap-x-10 sm:py-8"
+                delay={index === 0 ? 0 : index === 1 ? 90 : 180}
+                className="border-t border-ink/15 pt-8"
               >
-                <div className="sm:w-64 sm:shrink-0">
-                  <p className="text-base text-ink sm:text-lg">{name}</p>
-                  <p className="mt-2 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                    {dates ? `${role}, ${dates}` : role}
-                  </p>
-                </div>
-                <p className="max-w-[52ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-                  {line}
+                <Image
+                  src={portrait}
+                  alt={portraitAlt}
+                  width={portraitWidth}
+                  height={portraitHeight}
+                  sizes="(min-width: 1024px) 15rem, 45vw"
+                  className="h-auto w-32 sm:w-40 lg:w-full lg:max-w-[15rem]"
+                />
+                <p className="mt-7 text-base text-ink sm:text-lg">{name}</p>
+                <p className="mt-2 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+                  {dates ? `${role}, ${dates}` : role}
                 </p>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+              </Reveal>
+            ),
+          )}
+        </ul>
       </div>
     </section>
   );

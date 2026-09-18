@@ -40,6 +40,11 @@ export type Person = {
   role: string;
   dates?: string;
   line: string;
+  /** Painted portrait, alpha-keyed so it sits on the cream. */
+  portrait: string;
+  portraitWidth: number;
+  portraitHeight: number;
+  portraitAlt: string;
 };
 
 export const FAMILY: Person[] = [
@@ -48,16 +53,28 @@ export const FAMILY: Person[] = [
     role: "Founder",
     dates: "1948–2019",
     line: "Bought seven hectares on the southern hills of Siena in 1978 and made the first vintages in barrels under the family house.",
+    portrait: "/images/portrait-matteo.webp",
+    portraitWidth: 255,
+    portraitHeight: 418,
+    portraitAlt: "A painted portrait of an older man with white hair in an olive jacket.",
   },
   {
     name: "Elisa Bellandi",
     role: "Co-founder",
     line: "Drove the first sales and carried the name beyond the region.",
+    portrait: "/images/portrait-elisa.webp",
+    portraitWidth: 214,
+    portraitHeight: 407,
+    portraitAlt: "A painted portrait of a woman with dark hair pinned up, in red.",
   },
   {
     name: "Lorenzo Bellandi",
     role: "Winemaker",
     line: "Matteo’s son. Runs production today.",
+    portrait: "/images/portrait-lorenzo.webp",
+    portraitWidth: 274,
+    portraitHeight: 431,
+    portraitAlt: "A painted portrait of a dark-haired man in a deep green shirt.",
   },
   {
     name: "Sofia Bellandi",
@@ -65,6 +82,10 @@ export const FAMILY: Person[] = [
     // Fourth generation ON THE LAND, never "of the winery" — the label dates
     // from 1978, the family's work on this slope does not.
     line: "Fourth generation on this land.",
+    portrait: "/images/portrait-sofia.webp",
+    portraitWidth: 243,
+    portraitHeight: 385,
+    portraitAlt: "A painted portrait of a young woman with short dark hair, in coral.",
   },
 ];
 

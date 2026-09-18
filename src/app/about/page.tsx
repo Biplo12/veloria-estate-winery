@@ -165,23 +165,41 @@ export default function AboutPage() {
               Four people, in the order they arrived.
             </h2>
 
-            <ul className="mt-14 sm:mt-16">
-              {FAMILY.map(({ name, role, dates, line }) => (
-                <li
-                  key={name}
-                  className="flex flex-col gap-y-3 border-t border-ink/10 py-7 sm:flex-row sm:gap-x-10 sm:py-8"
-                >
-                  <div className="sm:w-64 sm:shrink-0">
-                    <p className="text-base text-ink sm:text-lg">{name}</p>
+            {/* Four across, so the faces read as a family rather than as a
+                list of staff — and so the right half of the page stops being
+                empty. The portraits are alpha-keyed, so they sit straight on
+                the cream with no plate around them. */}
+            <ul className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+              {FAMILY.map(
+                ({
+                  name,
+                  role,
+                  dates,
+                  line,
+                  portrait,
+                  portraitWidth,
+                  portraitHeight,
+                  portraitAlt,
+                }) => (
+                  <li key={name} className="border-t border-ink/15 pt-8">
+                    <Image
+                      src={portrait}
+                      alt={portraitAlt}
+                      width={portraitWidth}
+                      height={portraitHeight}
+                      sizes="(min-width: 1024px) 18rem, (min-width: 640px) 40vw, 70vw"
+                      className="h-auto w-40 sm:w-44 lg:w-full lg:max-w-[16rem]"
+                    />
+                    <p className="mt-7 text-base text-ink sm:text-lg">{name}</p>
                     <p className={`mt-2 ${EYEBROW}`}>
                       {dates ? `${role} · ${dates}` : role}
                     </p>
-                  </div>
-                  <p className="max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-                    {line}
-                  </p>
-                </li>
-              ))}
+                    <p className="mt-4 text-base leading-[1.6] text-ink-soft">
+                      {line}
+                    </p>
+                  </li>
+                ),
+              )}
             </ul>
 
             {/* Sofia's line is about the land, not the label. Said plainly

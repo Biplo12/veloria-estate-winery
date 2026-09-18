@@ -193,6 +193,19 @@ Use a `-cut` file whenever a motif sits on anything other than plain cream.
 one asset that disagrees with the canon; regenerate it paler if the wines section
 makes that obvious.
 
+## Portraits
+
+`portrait-matteo` / `-elisa` / `-lorenzo` / `-sofia` are alpha-keyed cut-outs from
+a single painted row, so all four share one scale, one light and one hand. They
+carry simplified painted faces — a few brushmarks for the features, no likeness —
+which is the register `faces.webp` already set. A photographic or finely detailed
+portrait of an invented person would break it.
+
+The source sheet held five figures; the woman in the navy apron is kept as
+`portrait-spare.webp` and is not used. Assignment to the canon: Matteo is the
+older man, because he is remembered as the founder who died in 2019; Lorenzo
+reads a little young for fifty.
+
 ## Moving image
 
 `public/video/tasting-room.mp4` is the tasting room animated — 832x464, silent,
