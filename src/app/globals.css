@@ -10,6 +10,7 @@
   --vermilion: #d4402a; /* the red dress, the ripe grapes */
   --indigo: #1b3a6b; /* the roof */
   --olive: #9a8a33; /* the hill */
+  --vine: #cfe3a6; /* the sunlit side of a vine leaf, for type on the photograph */
 }
 
 @theme inline {
@@ -19,6 +20,7 @@
   --color-vermilion: var(--vermilion);
   --color-indigo: var(--indigo);
   --color-olive: var(--olive);
+  --color-vine: var(--vine);
 
   --font-display: var(--font-jost);
 }
@@ -31,6 +33,20 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* The estate photograph is golden-hour bright, and the reference sets white type
+   straight onto it. This holds the picture down far enough for the text to carry
+   its own contrast, weighted to the top and bottom where the sky and the lit
+   rows are palest. */
+.vineyard-scrim {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(18 30 16 / 0.62) 0%,
+    rgb(18 30 16 / 0.42) 38%,
+    rgb(18 30 16 / 0.46) 62%,
+    rgb(18 30 16 / 0.66) 100%
+  );
 }
 
 @keyframes rise {

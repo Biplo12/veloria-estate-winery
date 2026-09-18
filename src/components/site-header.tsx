@@ -34,7 +34,7 @@ export function SiteHeader() {
       >
         <div className="flex items-center gap-5 sm:gap-9">
           <Image
-            src="/images/bottle-cut.png"
+            src="/images/bottle-cut.webp"
             alt=""
             aria-hidden
             width={671}
@@ -55,7 +55,7 @@ export function SiteHeader() {
             ))}
           </ul>
           <Image
-            src="/images/grapes-cut.png"
+            src="/images/grapes-cut.webp"
             alt=""
             aria-hidden
             width={681}
