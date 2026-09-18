@@ -100,15 +100,14 @@ Some things are worth waiting for.
 
 ## Visual direction
 
-The brief's stated direction is *old money / Italian heritage + modern luxury*:
-cream `#F3EDE0`, dark olive, burgundy, black, off-white; an elegant serif paired
-with a very plain grotesque; a minimal **V** monogram with a subtle vine.
+**Decided: the gouache.** The hand-painted illustrations in `public/images/` carry
+the interface, and every colour on the page is sampled from the artwork itself.
+The brief's alternative reading — *old money / Italian heritage*, an elegant serif
+with burgundy and a V monogram — was considered and dropped. Do not reintroduce it
+piecemeal; the palette tokens in `globals.css` are the contract.
 
-What is built today is a different register — the hand-painted gouache
-illustrations in `public/images/`, with colours sampled from the artwork itself and
-Jost used alone. The two directions do not merge cleanly: the naive gouache reads
-as modern natural wine, not as heritage luxury. Pick one before expanding past the
-hero, and say which in the commit.
+Type is Jost alone: tracked caps for the wordmark and labels, light weights at
+large sizes for statements.
 
 ## Longer-term scope
 
@@ -126,3 +125,25 @@ Files ending in `-cut` (`logo-cut`, `bottle-cut`, `grapes-cut`) are alpha-keyed:
 the flat cream paper was flood-filled away from the border, so light areas
 *inside* the artwork — a bottle label, the bowl of a glass — keep their paint.
 Use a `-cut` file whenever a motif sits on anything other than plain cream.
+
+## Which file is which wine
+
+| Canon wine | File |
+|---|---|
+| Veloria Rosso 2021 | `wine-rosso.webp` |
+| Bellandi Riserva 2019 | `wine-riserva.webp` |
+| Luna Bianca 2023 | `wine-luna-bianca.webp` |
+| Veloria Vecchia Vigna 2016 | `wine-vecchia-vigna.webp` |
+| all four together | `bottles-of-wine.webp` |
+
+`wine-luna-bianca` is painted as dark green glass, which reads as a red. It is the
+one asset that disagrees with the canon; regenerate it paler if the wines section
+makes that obvious.
+
+## Paper colours do not match
+
+Each illustration was painted on its own sheet and none of those creams is the
+page's `--paper` (`#f4eadd`) — `barrels-of-wine-2` is `#e5d8b8`, `visit-room` is
+`#e9e0d3`, `wine-rosso` is `#faf3df`. So a full-frame illustration must never be
+dropped onto the page as a floating rectangle: bleed it to the full width and use
+`.band-dissolve` to fade its top and bottom edges, or alpha-key it into a `-cut`.

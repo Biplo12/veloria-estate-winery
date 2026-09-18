@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { EstateBrief } from "@/components/estate-brief";
 import { SiteHeader } from "@/components/site-header";
+import { TimeScale } from "@/components/time-scale";
 
 export default function Home() {
   return (
@@ -59,6 +60,7 @@ export default function Home() {
         </div>
       </section>
 
+      <TimeScale />
       <EstateBrief />
     </>
   );

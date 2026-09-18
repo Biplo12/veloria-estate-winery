@@ -49,6 +49,27 @@ body {
   );
 }
 
+/* Each illustration was painted on its own sheet, and none of those creams is
+   the page's cream. Bleeding a band to the full width leaves only a top and a
+   bottom edge, and dissolving those lets the painting grow out of the page
+   instead of sitting on it as a rectangle. */
+.band-dissolve {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 9%,
+    #000 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 9%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
 @keyframes rise {
   from {
     opacity: 0;
