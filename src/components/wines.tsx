@@ -44,7 +44,7 @@ export function Wines() {
 
       {/* Painted as one picture, so the four bottles keep their relative size.
           Full width with the edges dissolved: its paper is not the page's. */}
-      <Reveal className="mt-16 sm:mt-20">
+      <Reveal className="mt-8 sm:mt-10">
         <div className="band-dissolve relative aspect-3072/1536 w-full">
           <Image
             src="/images/bottles-of-wine.webp"
@@ -65,7 +65,7 @@ export function Wines() {
               return (
                 <li
                   key={wine.slug}
-                  className="flex flex-col border-t border-ink/15 pt-6"
+                  className="group relative flex flex-col border-t border-ink/15 pt-6"
                 >
                   <h3 className="text-2xl font-light leading-[1.15] text-ink sm:text-[1.75rem]">
                     {/* One link per wine, stretched over the whole entry. The
@@ -73,7 +73,7 @@ export function Wines() {
                         bottle and the note clickable too. */}
                     <Link
                       href={`/wines/${wine.slug}`}
-                      className="underline-offset-[0.35em] after:absolute after:inset-0 group-hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
+                      className="transition-colors duration-200 after:absolute after:inset-0 group-hover:text-vermilion focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
                     >
                       {wine.name}
                     </Link>

@@ -41,37 +41,42 @@ export function TimeScale() {
         </Reveal>
       </div>
 
-      {/* The cellar is the subject, not a footnote: thirty months of the list
-          below happens in this room. Capped in height so it states the case
-          without taking a whole screen to do it. */}
-      <div className="band-dissolve relative mt-16 aspect-2912/1632 max-h-[46svh] w-full sm:mt-20">
-        <Image
-          src="/images/barrels-of-wine-2.webp"
-          alt="The estate cellar: two ranks of oak barrels under a vaulted ceiling, a winemaker drawing a glass from the cask."
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
+      {/* One grid for the whole section. The picture had been centred on its
+          own while the heading started at the container edge and the steps ran
+          the full width, so three different measures sat in one section and the
+          painting read as a rectangle dropped in the middle. It now shares the
+          heading's left edge and the steps stand beside it. */}
+      <div className="mx-auto mt-16 max-w-[86rem] px-6 sm:mt-20 sm:px-10">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-12 lg:grid-cols-12">
+          <Reveal className="lg:col-span-8">
+            <Image
+              src="/images/barrels-of-wine-2.webp"
+              alt="The estate cellar: two ranks of oak barrels under a vaulted ceiling, a winemaker drawing a glass from the cask."
+              width={2912}
+              height={1632}
+              sizes="(min-width: 1024px) 60vw, 100vw"
+              className="h-auto w-full"
+            />
+          </Reveal>
 
-      <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-        <ol className="grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map(({ step, duration }, index) => (
-            <Reveal
-              as="li"
-              key={step}
-              delay={index === 0 ? 0 : index === 1 ? 90 : 180}
-              className="border-t border-ink/15 pb-8 pt-6 sm:pb-0 sm:pt-7"
-            >
-              <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                {step}
-              </p>
-              <p className="mt-5 text-2xl font-light leading-[1.1] text-ink sm:text-[1.75rem]">
-                {duration}
-              </p>
-            </Reveal>
-          ))}
-        </ol>
+          <ol className="lg:col-span-3 lg:col-start-10">
+            {STEPS.map(({ step, duration }, index) => (
+              <Reveal
+                as="li"
+                key={step}
+                delay={index === 0 ? 0 : index === 1 ? 90 : 180}
+                className="border-t border-ink/15 py-5 first:border-t-0 first:pt-0 sm:py-6 sm:first:pt-0"
+              >
+                <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+                  {step}
+                </p>
+                <p className="mt-3 text-xl font-light leading-[1.15] text-ink sm:text-2xl">
+                  {duration}
+                </p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

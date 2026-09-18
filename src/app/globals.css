@@ -71,6 +71,27 @@ body {
   transform: none;
 }
 
+/* Hover. One effect: a small lift on a card's image. Links change colour and
+   nothing else, which is what they already did before an underline was added
+   on top of the underline they had. */
+.lift {
+  transition: transform 380ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.group:hover .lift {
+  transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lift {
+    transition: none;
+  }
+
+  .group:hover .lift {
+    transform: none;
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;

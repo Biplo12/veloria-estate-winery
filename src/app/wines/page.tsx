@@ -60,7 +60,7 @@ export default function WinesPage() {
                       width={wine.imageWidth}
                       height={wine.imageHeight}
                       sizes="(min-width: 640px) 21rem, 17rem"
-                      className="h-auto w-full max-w-[14rem] sm:max-w-[17rem]"
+                      className="lift h-auto w-full max-w-[14rem] sm:max-w-[17rem]"
                     />
                   </div>
 
@@ -70,7 +70,7 @@ export default function WinesPage() {
                           name; the overlay makes the whole row clickable. */}
                       <Link
                         href={`/wines/${wine.slug}`}
-                        className="underline-offset-[0.35em] decoration-ink/30 after:absolute after:inset-0 after:content-[''] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion group-hover:underline"
+                        className="transition-colors duration-200 after:absolute after:inset-0 after:content-[''] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion group-hover:text-vermilion"
                       >
                         {wine.name}
                       </Link>

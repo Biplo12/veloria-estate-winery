@@ -33,7 +33,7 @@ export default function VisitPage() {
           filmed, it only stops the browser stretching what there is. */}
       <section className="mx-auto max-w-[86rem] px-6 sm:px-10">
         <div>
-          <div className="relative aspect-4/3 w-full overflow-hidden sm:aspect-832/464 sm:max-h-[78svh]">
+          <div className="relative aspect-4/3 w-full sm:aspect-832/464 sm:max-h-[78svh]">
             <Image
               src="/images/tasting-room-poster.webp"
               alt="The tasting room: two people at the long wooden table, a bottle and glasses between them, the shutters thrown open on the hills beyond."

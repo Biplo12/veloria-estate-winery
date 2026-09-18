@@ -22,10 +22,11 @@ export function Estate() {
             Forty-two hectares, bought in pieces.
           </h2>
           <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">
-            The land sits on the southern hills of Siena, three hundred and
-            forty metres up. It was never laid out to a plan. The parcels are
-            where the family could reach them, in the order they could be paid
-            for, and the map still shows it.
+            Seven hectares in {ESTATE.founded}, an old stone cellar, and no
+            money for modern production. The other thirty-five arrived one
+            parcel at a time, over the decades that followed, and the map still
+            shows it: the parcels are where the family could reach them, in the
+            order they could be paid for.
           </p>
         </Reveal>
 
@@ -40,7 +41,7 @@ export function Estate() {
                 sizes="(min-width: 1024px) 56vw, 100vw"
                 className="h-auto w-full"
               />
-              <figcaption className="mt-6 text-base leading-[1.6] text-ink-soft sm:text-lg">
+              <figcaption className="mt-3 text-base leading-[1.6] text-ink-soft sm:text-lg">
                 {ESTATE.tenuta}, {ESTATE.place}.
               </figcaption>
             </figure>
@@ -67,21 +68,8 @@ export function Estate() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-base leading-[1.6] text-ink-soft sm:text-lg">
-              Matteo Bellandi, the son of a local farmer, started with the
-              cellar and the house above it. The rest was added slowly enough
-              that nobody had to change the way the wine was made.
-            </p>
           </Reveal>
         </div>
-
-        <Reveal className="mt-20 sm:mt-28">
-          <p className="max-w-[46ch] text-lg leading-[1.6] text-ink sm:text-xl">
-            Seven hectares in {ESTATE.founded}, an old stone cellar, and no
-            money for modern production. The other thirty-five arrived one
-            parcel at a time, over the decades that followed.
-          </p>
-        </Reveal>
       </div>
 
       <div className="band-dissolve relative mt-24 aspect-3360/1680 w-full sm:mt-32">

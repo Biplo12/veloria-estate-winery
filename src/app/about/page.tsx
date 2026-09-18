@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
-import { ESTATE, FAMILY, FOUNDER_QUOTE } from "@/data/estate";
+import { ESTATE, FAMILY } from "@/data/estate";
 
 export const metadata: Metadata = {
   title: "About",
@@ -88,8 +88,8 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+          <Reveal>
+            <div>
               <p className={EYEBROW}>{ESTATE.tenuta}</p>
               <h2 className={`mt-6 ${HEADING}`}>
                 It started in barrels under the house.
@@ -146,39 +146,21 @@ export default function AboutPage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
           <Reveal>
-            <Image
-              src="/images/grapes-cut.webp"
-              alt=""
-              aria-hidden
-              width={681}
-              height={810}
-              className="h-auto w-16 sm:w-20"
-            />
-            <blockquote className="mt-10 sm:mt-12">
-              <p className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl lg:text-[3rem]">
-                “{FOUNDER_QUOTE.text}”
-              </p>
-              <cite
-                className={`mt-8 block not-italic sm:mt-10 ${EYEBROW}`}
-              >
-                {FOUNDER_QUOTE.attribution}
-              </cite>
-            </blockquote>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+            <div>
               <p className={EYEBROW}>The family</p>
               <h2 className={`mt-6 ${HEADING}`}>
                 Four people, in the order they arrived.
               </h2>
+              {/* Sofia's line is about the land, not the label. Said under the
+                  heading so the arithmetic is settled before the names. */}
+              <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+                The label dates from {ESTATE.founded}. The family worked this
+                slope long before there was a label to put on anything, and the
+                house was standing in {ESTATE.houseBuilt}.
+              </p>
             </div>
 
-            <div className="lg:col-span-7 lg:col-start-6">
+            <div>
 
               {/* Four across, so the faces read as a family rather than as a
                   list of staff, and so the right half of the page stops being
@@ -223,13 +205,6 @@ export default function AboutPage() {
                 )}
               </ul>
 
-              {/* Sofia's line is about the land, not the label. Said plainly
-                  here so nobody has to guess at the arithmetic. */}
-              <p className="mt-12 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-                The label dates from {ESTATE.founded}. The family worked this
-                slope long before there was a label to put on anything, and the
-                house was standing in {ESTATE.houseBuilt}.
-              </p>
             </div>
           </Reveal>
         </div>

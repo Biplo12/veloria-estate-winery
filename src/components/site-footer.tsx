@@ -31,7 +31,22 @@ const linkClass =
  */
 export function SiteFooter() {
   return (
-    <footer id="contacts" className="bg-ink py-24 sm:py-32 lg:py-40">
+    <footer id="contacts" className="bg-ink pb-24 pt-16 sm:pb-32 sm:pt-20 lg:pb-40">
+      {/* A stand of cypresses on the ridge the page ends under. Painted on its
+          own green, so it is alpha-keyed to sit on the footer's ink rather than
+          bringing a second, brighter green with it. */}
+      <Reveal className="mx-auto mb-16 w-full max-w-[34rem] px-6 sm:mb-20 sm:max-w-[42rem]">
+        <Image
+          src="/images/footer-cypresses.webp"
+          alt=""
+          aria-hidden
+          width={1044}
+          height={367}
+          sizes="(min-width: 640px) 42rem, 90vw"
+          className="h-auto w-full"
+        />
+      </Reveal>
+
       <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
         <Reveal>
           <Image

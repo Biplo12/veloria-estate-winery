@@ -223,7 +223,7 @@ export default function VineyardsPage() {
                     href={href}
                     className="group block py-8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
                   >
-                    <span className="block text-2xl font-light leading-[1.15] text-ink underline-offset-[0.35em] group-hover:underline sm:text-3xl">
+                    <span className="block text-2xl font-light leading-[1.15] text-ink transition-colors duration-200 group-hover:text-vermilion sm:text-3xl">
                       {title}
                     </span>
                     <span className="mt-4 block max-w-[34ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
