@@ -49,27 +49,32 @@ export default function VineyardsPage() {
           at whatever size the page can give it. */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal>
-            <h2 className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
-              A hill in the province of Siena, drawn from above.
-            </h2>
-            <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-              The estate was never laid out to a plan. The parcels are where the
-              family could reach them, in the order they could be paid for, and
-              the map still shows it, the rows run whichever way the slope
-              allows, and the roads between them were paths first.
-            </p>
+          {/* The words hold the left four columns and the map takes the other
+              seven beside them. Stacked in one column the whole right half of
+              the page was empty and the map floated in the middle of it. */}
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <h2 className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
+                A hill in the province of Siena, drawn from above.
+              </h2>
+              <p className="mt-7 max-w-[46ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+                The estate was never laid out to a plan. The parcels are where
+                the family could reach them, in the order they could be paid
+                for, and the map still shows it, the rows run whichever way the
+                slope allows, and the roads between them were paths first.
+              </p>
+            </div>
 
-            <figure className="mt-14 sm:mt-20">
+            <figure className="lg:col-span-5 lg:col-start-8">
               <Image
                 src="/images/winery-map-cut.webp"
                 alt="A painted map of the estate seen from above: vineyard parcels in bands of green and olive, pale roads winding between them, and the family house near the centre."
                 width={2018}
                 height={2048}
                 sizes="(min-width: 1024px) 48rem, 100vw"
-                className="mx-auto h-auto w-full max-w-[48rem]"
+                className="h-auto w-full"
               />
-              <figcaption className="mx-auto mt-8 max-w-[48rem] pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+              <figcaption className="mt-4 pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
                 {ESTATE.tenuta} · {ESTATE.place} · {ESTATE.altitudeMetres} m
               </figcaption>
             </figure>
@@ -138,22 +143,24 @@ export default function VineyardsPage() {
         </div>
 
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="mt-14 sm:mt-20">
-            <h2 className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
+          <Reveal className="mt-14 grid grid-cols-1 gap-x-8 gap-y-8 sm:mt-20 lg:grid-cols-12">
+            <h2 className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl lg:col-span-4">
               Picked by hand, fermented in small batches.
             </h2>
-            <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-              The fruit comes off the vine into shallow baskets. The oldest
-              parcels and the newest are worked the same way, because nothing
-              about the work has been changed to make it quicker. Each parcel
-              ferments on its own, in small batches, and what happens next is
-              decided afterwards rather than before.
-            </p>
-            <p className="mt-6 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-              Some of it then goes into French oak and stays there for years.
-              Time is the part of this that cannot be hurried, and it is the
-              part the estate is built around.
-            </p>
+            <div className="lg:col-span-7 lg:col-start-6">
+              <p className="max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+                The fruit comes off the vine into shallow baskets. The oldest
+                parcels and the newest are worked the same way, because nothing
+                about the work has been changed to make it quicker. Each parcel
+                ferments on its own, in small batches, and what happens next is
+                decided afterwards rather than before.
+              </p>
+              <p className="mt-6 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+                Some of it then goes into French oak and stays there for years.
+                Time is the part of this that cannot be hurried, and it is the
+                part the estate is built around.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
