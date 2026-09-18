@@ -37,7 +37,7 @@ export const WINES: Wine[] = [
     summary: "The wine the family drinks. Made every year, and meant to be opened.",
     story: [
       "Rosso is the estate speaking normally. It takes Sangiovese from the younger parcels and softens it with Merlot from the two plots nearest the road, where the soil holds more water and the fruit comes in rounder.",
-      "It spends a year in old oak — old on purpose, so the barrel lends structure and not flavour. Nothing about it is held back for later. It is the bottle that goes on the table when the family eats.",
+      "It spends a year in old oak, old on purpose, so the barrel lends structure and not flavour. Nothing about it is held back for later. It is the bottle that goes on the table when the family eats.",
     ],
     ageing: "Twelve months in old French oak, then six in bottle.",
     bottles: 24000,
@@ -93,7 +93,7 @@ export const WINES: Wine[] = [
     priceEur: 110,
     summary: "From the oldest part of the estate, where some vines are over sixty. Not made every year.",
     story: [
-      "Vecchia Vigna comes from the first seven hectares — the plot Matteo bought in 1978, already old then. Some of those vines have been bearing for more than sixty years. They give very little fruit and they give it slowly.",
+      "Vecchia Vigna comes from the first seven hectares, the plot Matteo bought in 1978, already old then. Some of those vines have been bearing for more than sixty years. They give very little fruit and they give it slowly.",
       "It is declared only in the years that earn it. In the years that do not, the fruit goes quietly into the Riserva and nobody is told which ones.",
     ],
     ageing: "Thirty-six months in French oak, then two years in bottle.",

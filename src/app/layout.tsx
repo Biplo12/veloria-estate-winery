@@ -14,7 +14,7 @@ const jost = Jost({
 });
 
 const DESCRIPTION =
-  "A family estate on the southern hills of Siena. Forty-two hectares, picked by hand, and wines that are asked to wait — open to visitors from spring through harvest.";
+  "A family estate on the southern hills of Siena. Forty-two hectares, picked by hand, and wines that are asked to wait, open to visitors from spring through harvest.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${jost.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-paper text-ink">
         {/* Reveal animations start hidden. Without scripting they must not stay
-            that way — an animation is never the reason something cannot be read. */}
+            that way, an animation is never the reason something cannot be read. */}
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
@@ -56,11 +56,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         {/* The header sits absolutely over whatever follows, so every page is
-            responsible for clearing it — the hero by composition, the rest
+            responsible for clearing it, the hero by composition, the rest
             through <PageIntro>. */}
         <SiteHeader />
         {/* tabIndex -1 so the skip link actually moves focus, not just the
-            viewport — without it the next Tab returns to the header. */}
+            viewport, without it the next Tab returns to the header. */}
         <div id="content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
           {children}
         </div>

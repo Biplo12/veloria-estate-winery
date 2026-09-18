@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Estate } from "@/components/estate";
 import { EstateBrief } from "@/components/estate-brief";
 import { Family } from "@/components/family";
-import { Journal } from "@/components/journal";
 import { TimeScale } from "@/components/time-scale";
 import { Visit } from "@/components/visit";
 import { Wines } from "@/components/wines";
@@ -12,11 +11,11 @@ export default function Home() {
     <main className="bg-paper">
       <section className="relative flex h-[100svh] flex-col overflow-hidden bg-paper">
         <div className="relative flex w-full flex-1 flex-col">
-          {/* The painting fills the screen exactly — never taller, never leaving
+          {/* The painting fills the screen exactly, never taller, never leaving
               a band of bare paper. `object-[50%_20%]` splits the overflow 20/80:
               four fifths comes off the flowering foreground, a deep repeating
               band that loses a strip without anyone noticing, and the last fifth
-              lifts the estate out of its own empty sky. 20 is the ceiling — past
+              lifts the estate out of its own empty sky. 20 is the ceiling, past
               it the treeline reaches the name at 1366 × 768, the tightest common
               window. On a phone the painting takes the lower half and the name
               sits above it, since a full-height crop there would narrow it to a
@@ -34,7 +33,7 @@ export default function Home() {
 
           {/* Parked in the open sky the painter left above the house. That sky
               is a fixed share of the painting, so on screen it is always about
-              24% of the window height — 188px at 1366x768, 264px at 1920x1080.
+              24% of the window height, 188px at 1366x768, 264px at 1920x1080.
               A fixed lockup overflows it on a short window, so the whole lockup
               is measured in svh: it is sized by the room it actually has. */}
           <div className="order-1 flex flex-1 flex-col justify-center px-6 text-center sm:absolute sm:inset-x-0 sm:top-[4%] sm:z-20 sm:block sm:flex-none sm:p-0">
@@ -71,10 +70,9 @@ export default function Home() {
       <Estate />
       <Family />
       <Visit />
-      <Journal />
 
       {/* The colophon. Everything above speaks as the estate; this speaks as the
-          person who built the site, so it comes last — the work first, then the
+          person who built the site, so it comes last, the work first, then the
           account of it. */}
       <EstateBrief />
     </main>

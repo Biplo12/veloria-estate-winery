@@ -30,7 +30,7 @@ export const ENTRIES: Entry[] = [
     body: [
       "There is no ceremony to it. The barrels are moved, the wine is racked, and the cellar smells for two days of something between cherry and wet stone. Everyone who works here finds a reason to walk past.",
       "It now waits another year in bottle before it is allowed out. That part happens in the dark and nobody visits it.",
-      "This is the 2019, which was a slow year — a cold spring, then a long dry autumn that let the fruit hang. It is the kind of year the Riserva was designed for.",
+      "This is the 2019, which was a slow year, a cold spring, then a long dry autumn that let the fruit hang. It is the kind of year the Riserva was designed for.",
     ],
     image: "/images/sun-rise.webp",
     alt: "A low red sun in a pink sky over the hills, a line of cypresses along the ridge with a house set among them, and three people sitting out on the slope below.",
@@ -43,7 +43,7 @@ export const ENTRIES: Entry[] = [
     standfirst:
       "The first seven hectares came in over four mornings. Some of those vines are older than anyone picking them.",
     body: [
-      "The old plot is picked first and picked slowly. The vines give very little — a fraction of what the younger parcels give — and what they give has to be carried out in small baskets because the rows are too narrow for anything else.",
+      "The old plot is picked first and picked slowly. The vines give very little, a fraction of what the younger parcels give, and what they give has to be carried out in small baskets because the rows are too narrow for anything else.",
       "Nobody has decided yet whether this becomes Vecchia Vigna. That is not a decision you make in the vineyard. It is made months later, in the cellar, and in most years the answer is no.",
     ],
     image: "/images/collecting-grapes.webp",

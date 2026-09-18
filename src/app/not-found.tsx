@@ -23,7 +23,7 @@ export default function NotFound() {
 
         <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">
           Either the page has been put somewhere else or the address was typed a
-          letter out. Both are easily mended — start again from one of these.
+          letter out. Both are easily mended, start again from one of these.
         </p>
 
         <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:gap-12">

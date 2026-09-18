@@ -24,7 +24,7 @@ export function SiteHeader() {
   return (
     <header className="absolute inset-x-0 top-0 z-30 px-5 pt-5 sm:px-10 sm:pt-7">
       {/* The two groups sit at opposite ends on a wide screen, as the reference
-          has them. On a phone they simply wrap and centre — every route has to
+          has them. On a phone they simply wrap and centre, every route has to
           stay reachable, so nothing here is allowed to hide a link. */}
       <nav
         aria-label="Primary"
@@ -37,7 +37,7 @@ export function SiteHeader() {
           >
             <Image
               src="/images/bottle-cut.webp"
-              alt="Veloria Estate Winery — home"
+              alt="Veloria Estate Winery, home"
               width={671}
               height={920}
               className="h-8 w-auto"

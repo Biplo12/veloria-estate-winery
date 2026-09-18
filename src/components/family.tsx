@@ -78,14 +78,16 @@ export function Family() {
                 delay={index === 0 ? 0 : index === 1 ? 90 : 180}
                 className="border-t border-ink/15 pt-8"
               >
-                <Image
-                  src={portrait}
-                  alt={portraitAlt}
-                  width={portraitWidth}
-                  height={portraitHeight}
-                  sizes="(min-width: 1024px) 15rem, 45vw"
-                  className="h-auto w-32 sm:w-40 lg:w-full lg:max-w-[15rem]"
-                />
+                <div className="flex h-48 items-end sm:h-60 lg:h-64">
+                  <Image
+                    src={portrait}
+                    alt={portraitAlt}
+                    width={portraitWidth}
+                    height={portraitHeight}
+                    sizes="(min-width: 1024px) 15rem, 45vw"
+                    className="h-full w-auto object-contain object-bottom"
+                  />
+                </div>
                 <p className="mt-7 text-base text-ink sm:text-lg">{name}</p>
                 <p className="mt-2 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
                   {dates ? `${role}, ${dates}` : role}

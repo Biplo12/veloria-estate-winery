@@ -11,7 +11,7 @@ type Column = {
 const COLUMNS: Column[] = [
   {
     heading: "About",
-    body: "Veloria is a family estate on the southern hills of Siena, working forty-two hectares that started as seven. Matteo Bellandi made the first vintages in barrels under the family house in 1978. The same family still picks by hand, ferments in small batches, and waits — some wines for three years in French oak before anyone is allowed near them.",
+    body: "Veloria is a family estate on the southern hills of Siena, working forty-two hectares that started as seven. Matteo Bellandi made the first vintages in barrels under the family house in 1978. The same family still picks by hand, ferments in small batches, and waits, some wines for three years in French oak before anyone is allowed near them.",
   },
   {
     heading: "Task",
@@ -20,7 +20,7 @@ const COLUMNS: Column[] = [
   },
   {
     heading: "Solution",
-    body: "Commissioned gouache illustrations carry the whole interface, and every colour on the page is sampled out of the paintings themselves — the foliage, the roof, the red of a dress in the rows. Type stays out of their way: one geometric face, tracked wide and set like a label.",
+    body: "Commissioned gouache illustrations carry the whole interface, and every colour on the page is sampled out of the paintings themselves, the foliage, the roof, the red of a dress in the rows. Type stays out of their way: one geometric face, tracked wide and set like a label.",
     offset: true,
     accent: true,
   },

@@ -47,7 +47,7 @@ export function TimeScale() {
           </h2>
           <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">
             Almost nothing on this estate is work, and almost all of it is
-            waiting. The harvest — the part everyone pictures — is the shortest
+            waiting. The harvest, the part everyone pictures, is the shortest
             thing on the list.
           </p>
         </Reveal>

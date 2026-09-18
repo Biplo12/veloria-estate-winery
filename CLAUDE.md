@@ -133,7 +133,13 @@ One hand drew this page. Anything new must obey the same rules.
   content visible without scripting.
 - **Voice** — plain, unhurried, British-leaning English. Sentence case. No
   "discover", "experience", "journey", "nestled", no superlatives, no
-  exclamation marks. Tell, do not sell.
+  exclamation marks. Tell, do not sell. **No em dashes in rendered copy** —
+  they were stripped once already; use a comma or a full stop.
+- **Use the width** — a section of prose in a narrow left column inside the
+  1376px container leaves half the screen empty and reads as a broken grid.
+  Text sections are two columns: the eyebrow and heading hold `lg:col-span-4`,
+  the body runs at `lg:col-span-7 lg:col-start-6`. Measured target: no section
+  should leave more than about 15% of the viewport width unused on the right.
 
 ## The site
 
@@ -142,7 +148,7 @@ nav item is a real route, not an anchor.
 
 | Route | What it is |
 |---|---|
-| `/` | hero → time → wines → vineyards → family → visit → journal → colophon |
+| `/` | hero, time, wines, vineyards, family, visit, colophon |
 | `/about` | the founding, the name, the founder's quote, the family |
 | `/wines`, `/wines/[slug]` | the four wines, and one page each |
 | `/vineyards` | the land, the painted map, 7 → 42 hectares |

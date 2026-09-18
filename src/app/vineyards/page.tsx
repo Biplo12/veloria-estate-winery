@@ -56,7 +56,7 @@ export default function VineyardsPage() {
             <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
               The estate was never laid out to a plan. The parcels are where the
               family could reach them, in the order they could be paid for, and
-              the map still shows it — the rows run whichever way the slope
+              the map still shows it, the rows run whichever way the slope
               allows, and the roads between them were paths first.
             </p>
 

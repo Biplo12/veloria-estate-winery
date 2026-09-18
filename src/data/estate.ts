@@ -17,7 +17,7 @@ export const ESTATE = {
   houseBuilt: 1892,
   /** The name comes from the old Tuscan *velare* — to veil, to conceal. */
   nameMeaning:
-    "The name comes from the old Tuscan velare — to veil, to conceal. The best things need time before they are uncovered.",
+    "The name comes from the old Tuscan velare, to veil, to conceal. The best things need time before they are uncovered.",
   email: "visit@veloria.it",
   phone: "+39 0577 000 000",
   openTo: "Open to visitors from spring through harvest.",

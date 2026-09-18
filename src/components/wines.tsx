@@ -36,7 +36,7 @@ export function Wines() {
         <Reveal delay={90}>
           <p className="mt-7 max-w-[52ch] text-lg leading-[1.6] text-ink-soft sm:text-xl">
             One red for the table, the riserva the house is known for, a white to
-            drink young, and — only in the years that deserve it — a wine from
+            drink young, and, only in the years that deserve it, a wine from
             the oldest vines. All four come out of the same cellar, made by the
             same family at the same pace.
           </p>
@@ -49,7 +49,7 @@ export function Wines() {
         <div className="band-dissolve relative aspect-3072/1536 w-full">
           <Image
             src="/images/bottles-of-wine.webp"
-            alt="The four Veloria wines painted in a row against red and olive brushstrokes — from the left: Rosso, Bellandi Riserva, Luna Bianca and Vecchia Vigna."
+            alt="The four Veloria wines painted in a row against red and olive brushstrokes, from the left: Rosso, Bellandi Riserva, Luna Bianca and Vecchia Vigna."
             fill
             sizes="100vw"
             className="object-cover"
@@ -99,7 +99,7 @@ export function Wines() {
 
         <Reveal>
           <p className="mt-20 max-w-[52ch] text-base leading-[1.6] text-ink-soft sm:mt-24">
-            Every bottle is numbered before it leaves the cellar —{" "}
+            Every bottle is numbered before it leaves the cellar{" "}
             {/* The negative margin swallows the trailing letterspace, so the
                 full stop sits against the last figure instead of drifting. */}
             <span className="-mr-[0.3em] uppercase tracking-[0.3em] text-ink">

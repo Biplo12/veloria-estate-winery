@@ -45,7 +45,7 @@ export function Visit() {
       />
 
       {/* Silent, seamless, and gone entirely for anyone who asked for less
-          motion — a loop nobody can pause has no business playing then. The
+          motion, a loop nobody can pause has no business playing then. The
           still underneath keeps the room. */}
       <video
         autoPlay
@@ -60,8 +60,8 @@ export function Visit() {
         <source src="/video/tasting-room.mp4" type="video/mp4" />
       </video>
 
-      {/* velare — to veil. The painting is pale from edge to edge — its
-          lightest paint is about rgb(245 234 216), top band to bottom — so
+      {/* velare, to veil. The painting is pale from edge to edge, its
+          lightest paint is about rgb(245 234 216), top band to bottom, so
           white type needs the ink at 62% before it clears 4.5:1. The veil
           opens at 55%, which still leaves the window and the hills, passes
           66% within a tenth of the frame and holds at 88% from a third down,
@@ -114,8 +114,8 @@ export function Visit() {
                 ))}
               </ul>
 
-              {/* The address keeps its middot rhythm, so ESTATE.place — one
-                  comma string, "Siena, Toscana, Italia" — is split back into
+              {/* The address keeps its middot rhythm, so ESTATE.place, one
+                  comma string, "Siena, Toscana, Italia", is split back into
                   its parts. It carries Italia, which the hardcoded line left
                   off, so the line now ends on it. */}
               <p className="mt-10 pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-white">

@@ -25,7 +25,7 @@ export default function ContactsPage() {
       <PageIntro
         eyebrow="Contacts"
         title="How to reach the estate."
-        lead={`${ESTATE.openTo} Write or telephone and one of the people who works here will answer — there is nothing automatic at this end.`}
+        lead={`${ESTATE.openTo} Write or telephone and one of the people who works here will answer, there is nothing automatic at this end.`}
       />
 
       <section className="py-16 sm:py-24">
@@ -38,7 +38,7 @@ export default function ContactsPage() {
                 </h2>
                 <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
                   A tasting, a table in the restaurant, a room for a night or
-                  two — all of it is arranged the same way. Say which days you
+                  two, all of it is arranged the same way. Say which days you
                   have in mind and how many of you there are.
                 </p>
               </Reveal>

@@ -8,7 +8,7 @@ import { ESTATE, GROUNDS } from "@/data/estate";
 
 export const metadata: Metadata = {
   title: "Visit",
-  description: `${ESTATE.tenuta} is open to visitors from spring through harvest — the tasting room, the restaurant, a small guest hotel, the olive garden and the ${ESTATE.founded} cellar, ${ESTATE.altitudeMetres} metres above sea level.`,
+  description: `${ESTATE.tenuta} is open to visitors from spring through harvest, the tasting room, the restaurant, a small guest hotel, the olive garden and the ${ESTATE.founded} cellar, ${ESTATE.altitudeMetres} metres above sea level.`,
 };
 
 export default function VisitPage() {
@@ -23,7 +23,7 @@ export default function VisitPage() {
       {/* The one moving picture on the site. The still is a real layer beneath
           the video, not only a poster attribute: it carries the band before the
           first frame decodes, wherever autoplay is refused, and on its own for
-          anyone who asked for less motion — a loop nobody can pause has no
+          anyone who asked for less motion, a loop nobody can pause has no
           business playing then. The painting has no audio track at all, so
           there is nothing here to mute. */}
       <section>
@@ -68,7 +68,7 @@ export default function VisitPage() {
             <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
               {ESTATE.openTo} The rest of the year the estate is working, and
               most of that work happens somewhere dark where there is nothing to
-              watch. This is the whole list — the buildings, the land, and
+              watch. This is the whole list, the buildings, the land, and
               nothing that is not here.
             </p>
           </Reveal>
@@ -131,7 +131,7 @@ export default function VisitPage() {
                 </p>
                 <p className="mt-6 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
                   The {ESTATE.founded} cellar is still in use, and so is the
-                  cellar of collector wines — older vintages the estate kept.
+                  cellar of collector wines, older vintages the estate kept.
                 </p>
               </Reveal>
             </div>

@@ -107,35 +107,39 @@ export default async function WinePage({ params }: Props) {
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="max-w-[62ch]">
-            <h2 className="text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-12">
+            <h2 className="text-3xl font-light leading-[1.15] text-ink sm:text-4xl lg:col-span-4">
               Where it comes from
             </h2>
-            {wine.story.map((paragraph) => (
-              <p
-                key={paragraph}
-                className="mt-6 text-base leading-[1.6] text-ink-soft sm:text-lg"
-              >
-                {paragraph}
-              </p>
-            ))}
+            <div className="lg:col-span-7 lg:col-start-6">
+              {wine.story.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-base leading-[1.6] text-ink-soft first:mt-0 [&:not(:first-child)]:mt-6 sm:text-lg"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </Reveal>
         </div>
       </section>
 
       <section className="pb-16 sm:pb-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="max-w-[62ch]">
-            <h2 className="text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
-              Every bottle is numbered
-            </h2>
-            <p className="mt-6 text-base leading-[1.6] text-ink-soft sm:text-lg">
-              The number is written on the front label before the bottle leaves
-              the cellar, beside how many were made of this vintage. This is how
-              one of them reads.
-            </p>
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <h2 className="text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
+                Every bottle is numbered
+              </h2>
+              <p className="mt-6 text-base leading-[1.6] text-ink-soft sm:text-lg">
+                The number is written on the front label before the bottle
+                leaves the cellar, beside how many were made of this vintage.
+                This is how one of them reads.
+              </p>
+            </div>
 
-            <div className="mt-10 border border-ink/15 bg-ink/5 px-6 py-8 sm:px-10 sm:py-10">
+            <div className="border border-ink/15 bg-ink/5 px-6 py-8 sm:px-10 sm:py-10 lg:col-span-7 lg:col-start-6">
               <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
                 {labelNumber(wine)}
               </p>

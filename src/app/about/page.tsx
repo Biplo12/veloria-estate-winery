@@ -16,7 +16,7 @@ export const metadata: Metadata = {
  * ESTATE rather than typed, so a number can only ever be wrong in one place.
  */
 const STORY = [
-  `Matteo Bellandi was the son of a local farmer. In ${ESTATE.founded} he bought ${ESTATE.hectaresAtFounding} hectares on the southern hills of Siena — a slope, an old stone cellar, and no money for modern production. The first vintages were made in barrels under the family house.`,
+  `Matteo Bellandi was the son of a local farmer. In ${ESTATE.founded} he bought ${ESTATE.hectaresAtFounding} hectares on the southern hills of Siena, a slope, an old stone cellar, and no money for modern production. The first vintages were made in barrels under the family house.`,
   `In ${ESTATE.firstBottle} Matteo and his wife Elisa released the first bottle sold under the Veloria name. Elisa did the selling, and the name reached past the province because she carried it there.`,
   `The vineyard was enlarged over the decades that followed, one parcel at a time. It is ${ESTATE.hectares} hectares now, with its own ageing cellar and a small winery still run by the Bellandi family. The size changed. The way the wine is made did not.`,
 ];
@@ -64,39 +64,49 @@ export default function AboutPage() {
           the estate is arranged around, so it arrives before the history. */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal>
-            <p className={EYEBROW}>The name</p>
-            <h2 className={`mt-6 max-w-[20ch] ${HEADING}`}>
-              The name is the whole idea.
-            </h2>
-            <p className="mt-12 max-w-[26ch] text-2xl font-light leading-[1.25] text-ink sm:mt-16 sm:text-3xl">
-              {ESTATE.nameMeaning}
-            </p>
-            <p className="mt-10 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-              It is the shortest description of how the place works. Nothing
-              leaves here before it is ready, and the estate would rather be
-              late than early.
-            </p>
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className={EYEBROW}>The name</p>
+              <h2 className={`mt-6 ${HEADING}`}>
+                The name is the whole idea.
+              </h2>
+            </div>
+
+            <div className="lg:col-span-7 lg:col-start-6">
+              <p className="mt-12 max-w-[26ch] text-2xl font-light leading-[1.25] text-ink sm:mt-16 sm:text-3xl">
+                {ESTATE.nameMeaning}
+              </p>
+              <p className="mt-10 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+                It is the shortest description of how the place works. Nothing
+                leaves here before it is ready, and the estate would rather be
+                late than early.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal>
-            <p className={EYEBROW}>{ESTATE.tenuta}</p>
-            <h2 className={`mt-6 max-w-[20ch] ${HEADING}`}>
-              It started in barrels under the house.
-            </h2>
-            <div className="mt-10 max-w-[62ch] space-y-6 sm:mt-12">
-              {STORY.map((paragraph) => (
-                <p
-                  key={paragraph.slice(0, 24)}
-                  className="text-base leading-[1.6] text-ink-soft sm:text-lg"
-                >
-                  {paragraph}
-                </p>
-              ))}
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className={EYEBROW}>{ESTATE.tenuta}</p>
+              <h2 className={`mt-6 ${HEADING}`}>
+                It started in barrels under the house.
+              </h2>
+            </div>
+
+            <div className="lg:col-span-7 lg:col-start-6">
+              <div className="mt-10 max-w-[62ch] space-y-6 sm:mt-12">
+                {STORY.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 24)}
+                    className="text-base leading-[1.6] text-ink-soft sm:text-lg"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </Reveal>
 
@@ -159,56 +169,67 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal>
-            <p className={EYEBROW}>The family</p>
-            <h2 className={`mt-6 max-w-[20ch] ${HEADING}`}>
-              Four people, in the order they arrived.
-            </h2>
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className={EYEBROW}>The family</p>
+              <h2 className={`mt-6 ${HEADING}`}>
+                Four people, in the order they arrived.
+              </h2>
+            </div>
 
-            {/* Four across, so the faces read as a family rather than as a
-                list of staff — and so the right half of the page stops being
-                empty. The portraits are alpha-keyed, so they sit straight on
-                the cream with no plate around them. */}
-            <ul className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
-              {FAMILY.map(
-                ({
-                  name,
-                  role,
-                  dates,
-                  line,
-                  portrait,
-                  portraitWidth,
-                  portraitHeight,
-                  portraitAlt,
-                }) => (
-                  <li key={name} className="border-t border-ink/15 pt-8">
-                    <Image
-                      src={portrait}
-                      alt={portraitAlt}
-                      width={portraitWidth}
-                      height={portraitHeight}
-                      sizes="(min-width: 1024px) 18rem, (min-width: 640px) 40vw, 70vw"
-                      className="h-auto w-40 sm:w-44 lg:w-full lg:max-w-[16rem]"
-                    />
-                    <p className="mt-7 text-base text-ink sm:text-lg">{name}</p>
-                    <p className={`mt-2 ${EYEBROW}`}>
-                      {dates ? `${role} · ${dates}` : role}
-                    </p>
-                    <p className="mt-4 text-base leading-[1.6] text-ink-soft">
-                      {line}
-                    </p>
-                  </li>
-                ),
-              )}
-            </ul>
+            <div className="lg:col-span-7 lg:col-start-6">
 
-            {/* Sofia's line is about the land, not the label. Said plainly
-                here so nobody has to guess at the arithmetic. */}
-            <p className="mt-12 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-              The label dates from {ESTATE.founded}. The family worked this
-              slope long before there was a label to put on anything, and the
-              house was standing in {ESTATE.houseBuilt}.
-            </p>
+              {/* Four across, so the faces read as a family rather than as a
+                  list of staff, and so the right half of the page stops being
+                  empty. The portraits are alpha-keyed, so they sit straight on
+                  the cream with no plate around them. */}
+              <ul className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+                {FAMILY.map(
+                  ({
+                    name,
+                    role,
+                    dates,
+                    line,
+                    portrait,
+                    portraitWidth,
+                    portraitHeight,
+                    portraitAlt,
+                  }) => (
+                    <li key={name} className="border-t border-ink/15 pt-8">
+                      {/* Each portrait was trimmed to its own silhouette, so at
+                          equal width the narrowest one drew tallest. A fixed
+                          height with the figures sitting on the bottom edge puts
+                          them back on one baseline and lines the names up. */}
+                      <div className="flex h-56 items-end sm:h-64 lg:h-72">
+                        <Image
+                          src={portrait}
+                          alt={portraitAlt}
+                          width={portraitWidth}
+                          height={portraitHeight}
+                          sizes="(min-width: 1024px) 18rem, (min-width: 640px) 40vw, 70vw"
+                          className="h-full w-auto object-contain object-bottom"
+                        />
+                      </div>
+                      <p className="mt-7 text-base text-ink sm:text-lg">{name}</p>
+                      <p className={`mt-2 ${EYEBROW}`}>
+                        {dates ? `${role} · ${dates}` : role}
+                      </p>
+                      <p className="mt-4 text-base leading-[1.6] text-ink-soft">
+                        {line}
+                      </p>
+                    </li>
+                  ),
+                )}
+              </ul>
+
+              {/* Sofia's line is about the land, not the label. Said plainly
+                  here so nobody has to guess at the arithmetic. */}
+              <p className="mt-12 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
+                The label dates from {ESTATE.founded}. The family worked this
+                slope long before there was a label to put on anything, and the
+                house was standing in {ESTATE.houseBuilt}.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>

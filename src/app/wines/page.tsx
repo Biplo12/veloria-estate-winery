@@ -9,7 +9,7 @@ import { WINES, price } from "@/data/wines";
 export const metadata: Metadata = {
   title: "Wines",
   description:
-    "The four wines made at Tenuta Veloria — Veloria Rosso, Bellandi Riserva, Luna Bianca and Veloria Vecchia Vigna — with what is in each glass and how long it waited.",
+    "The four wines made at Tenuta Veloria, Veloria Rosso, Bellandi Riserva, Luna Bianca and Veloria Vecchia Vigna, with what is in each glass and how long it waited.",
 };
 
 /**
@@ -36,7 +36,7 @@ export default function WinesPage() {
       <PageIntro
         eyebrow="What the estate makes"
         title="Four wines, made slowly."
-        lead="One red for the table, the riserva the house is judged on, a white drunk young, and — only in the years that earn it — a wine from the oldest vines on the property."
+        lead="One red for the table, the riserva the house is judged on, a white drunk young, and, only in the years that earn it, a wine from the oldest vines on the property."
       />
 
       {/* The row was painted as a single picture, so the four bottles keep their
@@ -116,7 +116,7 @@ export default function WinesPage() {
           <Reveal>
             <p className="mt-20 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:mt-24 sm:text-lg">
               Every bottle is numbered before it leaves the cellar. Nothing on
-              this site sells wine — to ask about a case, or about tasting them
+              this site sells wine, to ask about a case, or about tasting them
               here,{" "}
               <Link
                 href="/contacts"
