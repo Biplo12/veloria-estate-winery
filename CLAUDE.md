@@ -168,6 +168,12 @@ The colophon (`EstateBrief`, `#project`) speaks as the person who built the site
 not as the estate, which is why it sits last — the work first, then the account of
 it. Everything above it stays in the estate's voice.
 
+It is deliberately quiet: a rule, a line and three short notes on the cream. It
+was a full-screen photograph with justified white type over it, which made the
+loudest block on the page the one in the wrong voice, and put the site's only
+photograph at the end of a site made of paintings. `winery-photo.webp` is no
+longer rendered anywhere.
+
 ## Longer-term scope
 
 The project is meant to grow past a landing page: shop, tasting reservations,
