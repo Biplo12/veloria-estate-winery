@@ -7,7 +7,7 @@ import { Wines } from "@/components/wines";
 export default function Home() {
   return (
     <main className="bg-paper">
-      <section className="relative flex h-[100svh] flex-col overflow-hidden bg-paper">
+      <section className="relative flex h-[calc(100svh-var(--header-h))] flex-col overflow-hidden bg-paper">
         <div className="relative flex w-full flex-1 flex-col">
           {/* The painting fills the screen exactly, never taller, never leaving
               a band of bare paper. `object-[50%_20%]` splits the overflow 20/80:

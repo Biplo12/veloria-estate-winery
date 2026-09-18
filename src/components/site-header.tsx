@@ -16,55 +16,54 @@ function NavLink({ label, href }: Nav) {
 }
 
 /**
- * Unchromed navigation, sitting straight on the page with no bar behind it.
- * It is absolutely positioned, so anything below it has to clear it — the hero
- * does that with its own composition, every other page with <PageIntro>.
+ * Sticky, with the mark in the middle.
+ *
+ * It carries a translucent paper ground rather than none: once it follows the
+ * reader down the page it passes over paintings and over the dark visiting
+ * section, and unchromed type would be unreadable on both. Over the hero that
+ * ground is nearly invisible anyway, because the sky the painter left there is
+ * within a couple of units of the page's own cream.
+ *
+ * Being sticky it sits in the flow and takes real height, so the hero measures
+ * itself against `--header-h` rather than against the whole viewport.
+ *
+ * On a phone the mark takes its own line above the links: five links and a mark
+ * in one row overflowed 375px by 67px, and nothing here is allowed to push the
+ * page sideways.
  */
 export function SiteHeader() {
   return (
-    <header className="absolute inset-x-0 top-0 z-30 px-5 pt-5 sm:px-10 sm:pt-7">
-      {/* The two groups sit at opposite ends on a wide screen, as the reference
-          has them. On a phone they simply wrap and centre, every route has to
-          stay reachable, so nothing here is allowed to hide a link. */}
+    <header className="sticky top-0 z-40 h-[var(--header-h)] bg-paper/85 backdrop-blur-sm">
       <nav
         aria-label="Primary"
-        className="mx-auto flex max-w-[86rem] flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:flex-nowrap sm:justify-between sm:gap-10"
+        className="mx-auto flex h-full max-w-[86rem] flex-wrap items-center justify-center gap-x-5 gap-y-1 px-5 sm:flex-nowrap sm:justify-between sm:px-10"
       >
-        <div className="flex items-center gap-5 sm:gap-9">
-          <Link
-            href="/"
-            className="hidden shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion sm:block"
-          >
-            <Image
-              src="/images/bottle-cut.webp"
-              alt="Veloria Estate Winery, home"
-              width={671}
-              height={920}
-              className="h-8 w-auto"
-            />
-          </Link>
-          <ul className="flex items-center gap-5 sm:gap-9">
-            {NAV_LEFT.map((link) => (
-              <NavLink key={link.href} {...link} />
-            ))}
-          </ul>
-        </div>
+        <ul className="flex items-center gap-4 sm:gap-9">
+          {NAV_LEFT.map((link) => (
+            <NavLink key={link.href} {...link} />
+          ))}
+        </ul>
 
-        <div className="flex items-center gap-5 sm:gap-9">
-          <ul className="flex items-center gap-5 sm:gap-9">
-            {NAV_RIGHT.map((link) => (
-              <NavLink key={link.href} {...link} />
-            ))}
-          </ul>
+        <Link
+          href="/"
+          aria-label="Veloria Estate Winery, home"
+          className="order-first w-full shrink-0 text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion sm:order-none sm:w-auto"
+        >
           <Image
-            src="/images/grapes-cut.webp"
+            src="/images/logo-cut.webp"
             alt=""
             aria-hidden
-            width={681}
-            height={810}
-            className="hidden h-8 w-auto sm:block"
+            width={653}
+            height={722}
+            className="mx-auto h-8 w-auto sm:h-11"
           />
-        </div>
+        </Link>
+
+        <ul className="flex items-center gap-4 sm:gap-9">
+          {NAV_RIGHT.map((link) => (
+            <NavLink key={link.href} {...link} />
+          ))}
+        </ul>
       </nav>
     </header>
   );

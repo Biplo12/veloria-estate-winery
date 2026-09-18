@@ -114,25 +114,6 @@ export default function ContactsPage() {
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
-          <Reveal className="border-t border-ink/10 pt-16 sm:pt-20">
-            <h2 className="text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
-              There is no form on this page.
-            </h2>
-            <p className="mt-7 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
-              A form would take what you had written and send it to the address
-              above, with a screen in between saying that it had gone. We have
-              left out the screen. Write to{" "}
-              <a href={`mailto:${ESTATE.email}`} className={linkClass}>
-                {ESTATE.email}
-              </a>{" "}
-              and it is read here, by the people who can answer it.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
           <Reveal className="border-t border-ink/10 pt-16 text-center sm:pt-24">
             <p className="pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
               Printed on the back of every bottle

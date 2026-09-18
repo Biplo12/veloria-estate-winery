@@ -3,6 +3,10 @@
 /* Every value below is sampled straight out of the gouache illustrations,
    so the interface and the artwork sit on the same sheet of paper. */
 :root {
+  /* The sticky header sits in the flow and takes real height, so anything
+     that wants to fill the screen has to subtract it. */
+  --header-h: 5.5rem;
+
   --paper: #f4eadd;
   --ink: #23331f; /* darkest foliage */
   --ink-soft: #74553f; /* the brown the reference nav is lettered in, taken a
@@ -23,6 +27,12 @@
   --color-vine: var(--vine);
 
   --font-display: var(--font-jost);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 4.75rem;
+  }
 }
 
 html {

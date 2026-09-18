@@ -1,9 +1,8 @@
 import { Reveal } from "@/components/reveal";
 
 /**
- * The opening of every page that is not the landing page. The site header sits
- * absolutely over the top of the document, so the padding here is what keeps a
- * page title clear of it.
+ * The opening of every page that is not the landing page. The header is sticky
+ * and sits in the flow, so this no longer has to reserve room for it.
  */
 export function PageIntro({
   eyebrow,
@@ -15,7 +14,7 @@ export function PageIntro({
   lead?: string;
 }) {
   return (
-    <header className="bg-paper pb-14 pt-32 sm:pb-20 sm:pt-40 lg:pt-44">
+    <header className="bg-paper pb-14 pt-16 sm:pb-20 sm:pt-24">
       <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
         {eyebrow ? (
           <Reveal
