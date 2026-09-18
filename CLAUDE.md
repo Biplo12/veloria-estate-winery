@@ -149,7 +149,7 @@ nav item is a real route, not an anchor.
 
 | Route | What it is |
 |---|---|
-| `/` | hero, time, wines, vineyards, family, visit, colophon |
+| `/` | hero, time, wines, vineyards, family, visit |
 | `/about` | the founding, the name, the founder's quote, the family |
 | `/wines`, `/wines/[slug]` | the four wines, and one page each |
 | `/vineyards` | the land, the painted map, 7 → 42 hectares |
@@ -164,15 +164,17 @@ Nothing on the site transacts. There is no cart, no checkout, no booking backend
 and no form that submits. A call to action links to `/contacts`. Do not add one
 that pretends otherwise.
 
-The colophon (`EstateBrief`, `#project`) speaks as the person who built the site,
-not as the estate, which is why it sits last — the work first, then the account of
-it. Everything above it stays in the estate's voice.
+There is no colophon. It began as a full-screen photograph with justified white
+type, became a quiet note on the cream, and was then dropped: the whole page
+speaks as the estate, and a passage in the builder's voice never earned its
+place in that. `winery-photo.webp` is no longer rendered anywhere.
 
-It is deliberately quiet: a rule, a line and three short notes on the cream. It
-was a full-screen photograph with justified white type over it, which made the
-loudest block on the page the one in the wrong voice, and put the site's only
-photograph at the end of a site made of paintings. `winery-photo.webp` is no
-longer rendered anywhere.
+**Devices that did not survive.** Two attempts to *draw* the length of the wait
+in the time section failed — a hairline rule per step read as four empty form
+fields, and a type size that grew with the duration only made the row look badly
+aligned. The steps are now set plainly and the cellar carries the idea. A
+proportional rule for 7 → 42 hectares went the same way. If a graphic needs a
+caption to be understood, it is not working.
 
 ## Longer-term scope
 

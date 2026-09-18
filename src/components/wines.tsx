@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Reveal } from "@/components/reveal";
-import { WINES, findWine, labelNumber, price } from "@/data/wines";
+import { WINES, price } from "@/data/wines";
 
 /**
  * Which of the data's two prose lines each column carries. The words live in
@@ -22,8 +23,6 @@ const COLUMN: Record<string, { note: boolean; aside: boolean }> = {
 };
 
 /** The bottle the closing line points at — the label the estate prints. */
-const NUMBERED = findWine("riserva") ?? WINES[0];
-
 export function Wines() {
   return (
     <section id="wines" className="bg-paper py-24 sm:py-32 lg:py-40">
@@ -69,7 +68,15 @@ export function Wines() {
                   className="flex flex-col border-t border-ink/15 pt-6"
                 >
                   <h3 className="text-2xl font-light leading-[1.15] text-ink sm:text-[1.75rem]">
-                    {wine.name}
+                    {/* One link per wine, stretched over the whole entry. The
+                        name is the accessible name; the overlay makes the
+                        bottle and the note clickable too. */}
+                    <Link
+                      href={`/wines/${wine.slug}`}
+                      className="underline-offset-[0.35em] after:absolute after:inset-0 group-hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
+                    >
+                      {wine.name}
+                    </Link>
                   </h3>
                   <p className="mt-3 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
                     {wine.vintage} · {wine.grapes}
@@ -97,17 +104,6 @@ export function Wines() {
           </ol>
         </Reveal>
 
-        <Reveal>
-          <p className="mt-20 max-w-[52ch] text-base leading-[1.6] text-ink-soft sm:mt-24">
-            Every bottle is numbered before it leaves the cellar{" "}
-            {/* The negative margin swallows the trailing letterspace, so the
-                full stop sits against the last figure instead of drifting. */}
-            <span className="-mr-[0.3em] uppercase tracking-[0.3em] text-ink">
-              {labelNumber(NUMBERED)}
-            </span>
-            .
-          </p>
-        </Reveal>
       </div>
     </section>
   );

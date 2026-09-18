@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Estate } from "@/components/estate";
-import { EstateBrief } from "@/components/estate-brief";
 import { Family } from "@/components/family";
 import { TimeScale } from "@/components/time-scale";
 import { Visit } from "@/components/visit";
@@ -71,10 +70,6 @@ export default function Home() {
       <Family />
       <Visit />
 
-      {/* The colophon. Everything above speaks as the estate; this speaks as the
-          person who built the site, so it comes last, the work first, then the
-          account of it. */}
-      <EstateBrief />
     </main>
   );
 }

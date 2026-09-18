@@ -32,21 +32,21 @@ export function Family() {
           </p>
         </Reveal>
 
-        <div className="mt-20 grid grid-cols-1 gap-y-10 sm:mt-28 lg:grid-cols-12 lg:items-start lg:gap-x-8">
-          <Reveal className="lg:col-span-2">
+        {/* The quote holds the left, the four faces fill the right. Two rows
+            of two rather than a single column: four stacked portraits would run
+            far past the quote and leave the same hole lower down. */}
+        <div className="mt-20 grid grid-cols-1 gap-x-8 gap-y-16 sm:mt-28 lg:grid-cols-12">
+          <Reveal className="lg:col-span-6">
             <Image
               src="/images/grapes-cut.webp"
               alt=""
               aria-hidden
               width={681}
               height={810}
-              className="h-auto w-20 sm:w-24 lg:w-full lg:max-w-[8rem]"
+              className="h-auto w-20 sm:w-24"
             />
-          </Reveal>
-
-          <Reveal delay={90} className="lg:col-span-10">
-            <blockquote>
-              <p className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl lg:text-[3rem]">
+            <blockquote className="mt-10">
+              <p className="max-w-[18ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl lg:text-[2.75rem]">
                 {MATTEO}
               </p>
               <cite className="mt-8 block text-[0.68rem] uppercase not-italic tracking-[0.3em] text-ink-soft sm:mt-10">
@@ -54,48 +54,46 @@ export function Family() {
               </cite>
             </blockquote>
           </Reveal>
-        </div>
 
-        {/* Four across: the faces read as a family, and the row fills the
-            width the old list left empty on the right. */}
-        <ul className="mt-24 grid grid-cols-2 gap-x-8 gap-y-12 sm:mt-32 lg:grid-cols-4">
-          {FAMILY.map(
-            (
-              {
-                name,
-                role,
-                dates,
-                portrait,
-                portraitWidth,
-                portraitHeight,
-                portraitAlt,
-              },
-              index,
-            ) => (
-              <Reveal
-                as="li"
-                key={name}
-                delay={index === 0 ? 0 : index === 1 ? 90 : 180}
-                className="border-t border-ink/15 pt-8"
-              >
-                <div className="flex h-48 items-end sm:h-60 lg:h-64">
-                  <Image
-                    src={portrait}
-                    alt={portraitAlt}
-                    width={portraitWidth}
-                    height={portraitHeight}
-                    sizes="(min-width: 1024px) 15rem, 45vw"
-                    className="h-full w-auto object-contain object-bottom"
-                  />
-                </div>
-                <p className="mt-7 text-base text-ink sm:text-lg">{name}</p>
-                <p className="mt-2 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                  {dates ? `${role}, ${dates}` : role}
-                </p>
-              </Reveal>
-            ),
-          )}
-        </ul>
+          <ul className="grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-5 lg:col-start-8">
+            {FAMILY.map(
+              (
+                {
+                  name,
+                  role,
+                  dates,
+                  portrait,
+                  portraitWidth,
+                  portraitHeight,
+                  portraitAlt,
+                },
+                index,
+              ) => (
+                <Reveal
+                  as="li"
+                  key={name}
+                  delay={index === 0 ? 0 : index === 1 ? 90 : 180}
+                  className="border-t border-ink/15 pt-6"
+                >
+                  <div className="flex h-36 items-end sm:h-44">
+                    <Image
+                      src={portrait}
+                      alt={portraitAlt}
+                      width={portraitWidth}
+                      height={portraitHeight}
+                      sizes="(min-width: 1024px) 11rem, 40vw"
+                      className="h-full w-auto object-contain object-bottom"
+                    />
+                  </div>
+                  <p className="mt-5 text-base text-ink">{name}</p>
+                  <p className="mt-2 text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
+                    {dates ? `${role}, ${dates}` : role}
+                  </p>
+                </Reveal>
+              ),
+            )}
+          </ul>
+        </div>
       </div>
     </section>
   );

@@ -9,10 +9,6 @@ import { ESTATE, GROUNDS } from "@/data/estate";
  * say the same thing. The rule measures land and nothing else — the years are
  * not a scale along it, and are left to the prose.
  */
-const FIRST_PLOT_SHARE = `${(
-  (ESTATE.hectaresAtFounding / ESTATE.hectares) *
-  100
-).toFixed(2)}%`;
 
 export function Estate() {
   return (
@@ -80,34 +76,7 @@ export function Estate() {
         </div>
 
         <Reveal className="mt-20 sm:mt-28">
-          <div aria-hidden className="flex h-px w-full">
-            <span
-              className="h-px shrink-0 grow-0 bg-ink"
-              style={{ flexBasis: FIRST_PLOT_SHARE }}
-            />
-            <span className="h-px grow bg-ink/20" />
-          </div>
-
-          <div className="mt-5 flex items-start justify-between gap-6">
-            <div>
-              <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                First plot
-              </p>
-              <p className="mt-2 whitespace-nowrap text-base leading-[1.6] text-ink sm:text-lg">
-                {ESTATE.hectaresAtFounding} ha
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                Estate today
-              </p>
-              <p className="mt-2 whitespace-nowrap text-base leading-[1.6] text-ink sm:text-lg">
-                {ESTATE.hectares} ha
-              </p>
-            </div>
-          </div>
-
-          <p className="mt-10 max-w-[46ch] text-lg leading-[1.6] text-ink sm:text-xl">
+          <p className="max-w-[46ch] text-lg leading-[1.6] text-ink sm:text-xl">
             Seven hectares in {ESTATE.founded}, an old stone cellar, and no
             money for modern production. The other thirty-five arrived one
             parcel at a time, over the decades that followed.
