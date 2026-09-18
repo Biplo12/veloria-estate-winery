@@ -47,12 +47,12 @@ export default function VineyardsPage() {
 
       {/* Where it is. The map is alpha-keyed, so it sits straight on the cream
           at whatever size the page can give it. */}
-      <section className="py-16 sm:py-24">
+      <section className="py-10 sm:py-14">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
           {/* The words hold the left four columns and the map takes the other
               seven beside them. Stacked in one column the whole right half of
               the page was empty and the map floated in the middle of it. */}
-          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-12">
+          <Reveal className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-4">
               <h2 className="max-w-[20ch] text-3xl font-light leading-[1.15] text-ink sm:text-4xl">
                 A hill in the province of Siena, drawn from above.
@@ -67,10 +67,10 @@ export default function VineyardsPage() {
 
             <figure className="lg:col-span-5 lg:col-start-8">
               <Image
-                src="/images/winery-map-cut.webp"
+                src="/images/winery-map-tight-cut.webp"
                 alt="A painted map of the estate seen from above: vineyard parcels in bands of green and olive, pale roads winding between them, and the family house near the centre."
-                width={2018}
-                height={2048}
+                width={1756}
+                height={1633}
                 sizes="(min-width: 1024px) 48rem, 100vw"
                 className="h-auto w-full"
               />
@@ -83,7 +83,7 @@ export default function VineyardsPage() {
       </section>
 
       {/* The one figure worth setting structurally. */}
-      <section className="py-16 sm:py-24">
+      <section className="py-10 sm:py-14">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
           <Reveal>
             <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-12 lg:gap-x-10">
@@ -131,7 +131,7 @@ export default function VineyardsPage() {
       </section>
 
       {/* The harvest, full width, its edges dissolved into the page. */}
-      <section className="py-16 sm:py-24">
+      <section className="py-10 sm:py-14">
         <div className="band-dissolve relative aspect-3360/1680 w-full">
           <Image
             src="/images/vineyard-harvest.webp"
@@ -166,7 +166,7 @@ export default function VineyardsPage() {
       </section>
 
       {/* What stands on the land. */}
-      <section className="py-16 sm:py-24">
+      <section className="py-10 sm:py-14">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
           <Reveal>
             <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-12 lg:gap-x-10">
@@ -220,7 +220,7 @@ export default function VineyardsPage() {
       </section>
 
       {/* Onward. */}
-      <section className="py-16 sm:py-24">
+      <section className="py-10 sm:py-14">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">
           <Reveal>
             <ul className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-10">

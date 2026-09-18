@@ -108,10 +108,10 @@ export default function VisitPage() {
             <div className="lg:col-span-5 lg:col-start-8">
               <Reveal delay={180}>
                 <Image
-                  src="/images/winery-map-cut.webp"
+                  src="/images/winery-map-tight-cut.webp"
                   alt="A painted aerial of the estate: the house and its bell tower on the ridge, a pale track dropping past the vineyard blocks, with cypresses and woodland on either side."
-                  width={2018}
-                  height={2048}
+                  width={1756}
+                  height={1633}
                   sizes="(min-width: 1024px) 32rem, 100vw"
                   className="h-auto w-full"
                 />
@@ -158,8 +158,17 @@ export default function VisitPage() {
                   </span>
                 </Link>
 
-                <p className="mt-10 pl-[0.3em] text-[0.68rem] uppercase tracking-[0.3em] text-ink-soft">
-                  {ESTATE.tenuta} · {ESTATE.place}
+                {/* The address was standing here as a dead line of caps. The
+                    page has nothing to do with where the estate is, it has to
+                    do with getting in touch, so it points at the one route
+                    that carries the address, the email and the phone. */}
+                <p className="mt-8 text-base leading-[1.6] text-ink-soft sm:text-lg">
+                  <Link
+                    href="/contacts"
+                    className="text-ink underline decoration-ink/30 underline-offset-[0.35em] transition-colors duration-200 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-vermilion"
+                  >
+                    How to reach the estate
+                  </Link>
                 </p>
               </Reveal>
             </div>
