@@ -268,12 +268,18 @@ showing underneath.
 
 ## Icons and sharing
 
-`src/app/icon.png`, `apple-icon.png` and `opengraph-image.jpg` are generated from
-`logo-cut` and the hero. The OG image carries **no words** — Jost is only present
-as a woff2 subset, which cannot be rendered into an image, and a card shows the
-title in the platform's own type anyway. At 32px the mark reads as a warm pink and
-green blob rather than a legible object; a simplified mark would serve the favicon
-better if the brand ever gets one.
+`src/app/opengraph-image.jpg` is generated from the hero. It carries **no words**
+— Jost is only present as a woff2 subset, which cannot be rendered into an image,
+and a card shows the title in the platform's own type anyway.
+
+`src/app/icon.png` and `apple-icon.png` come from `public/images/mark.webp`: a
+single bottle against a fan of leaves, drawn for small sizes. The full logo was
+used before and read as a warm blob at 32px, because it is a scene — bottle,
+glass, leaves and a pink wash — and a scene has nothing left at that size. The
+mark is cropped to its own bounds with a 12% margin before scaling, since it only
+filled half its sheet. Its ground is the pink it was painted on, not the page
+cream: a favicon does not have to match the page, and the odd colour helps it be
+picked out in a strip of tabs. Verified legible at 48, 32 and 16px.
 
 ## Paper colours do not match
 
