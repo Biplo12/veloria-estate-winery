@@ -1,10 +1,8 @@
 <p align="center">
-  <img src="docs/readme-mark.webp" width="130" alt="">
+  <img src="public/images/logo-cut.webp" width="120" alt="">
 </p>
 
 <h1 align="center">Veloria Estate Winery</h1>
-
-<p align="center"><em>Made slowly. Remembered forever.</em></p>
 
 <p align="center">
   <img src="public/images/winery-gate.webp" width="960" alt="A painted gravel drive running up between cypresses to an open iron gate in a low stone wall">
