@@ -1,4 +1,14 @@
-# Veloria Estate Winery
+<p align="center">
+  <img src="public/images/logo-cut.webp" width="110" alt="">
+</p>
+
+<h1 align="center">Veloria Estate Winery</h1>
+
+<p align="center"><em>Made slowly. Remembered forever.</em></p>
+
+<p align="center">
+  <img src="public/images/winery-hero.webp" width="960" alt="A painted view of the estate house on its slope, with guests walking the flowering rows below the vineyard">
+</p>
 
 A winery that does not exist, built as a portfolio piece.
 
@@ -37,6 +47,23 @@ first time it enters the viewport and never again. No parallax and no scroll
 effects. Under `prefers-reduced-motion` it shows everything immediately, and a
 `<noscript>` rule keeps the page readable with JavaScript switched off.
 
+## Four wines, and no plans for a fifth
+
+<p align="center">
+  <img src="public/images/bottles-of-wine.webp" width="820" alt="The four Veloria bottles painted in a row">
+</p>
+
+Each one has a page of its own, and so does each of the four people who turn up
+on it. Neither set has a dead end: the wines and the family both read as a ring,
+so there is always one either side of the one you are looking at.
+
+<p align="center">
+  <img src="public/images/portrait-matteo.webp" height="150" alt="Matteo Bellandi">
+  <img src="public/images/portrait-elisa.webp" height="150" alt="Elisa Bellandi">
+  <img src="public/images/portrait-lorenzo.webp" height="150" alt="Lorenzo Bellandi">
+  <img src="public/images/portrait-sofia.webp" height="150" alt="Sofia Bellandi">
+</p>
+
 ## Running it
 
 ```bash
@@ -72,6 +99,10 @@ creams is exactly the page's cream. A full-frame painting dropped onto the
 background as a floating rectangle will always show its edge. Either bleed it
 to the full width so only the top and bottom meet the page, or key the paper
 out and let the motif stand on the cream.
+
+<p align="center">
+  <img src="public/images/winery-panorama.webp" width="960" alt="A painted panorama of the hill village, cypresses, terraced vineyard rows and the lake below">
+</p>
 
 ## Stack
 
