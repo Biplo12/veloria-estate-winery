@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Reveal } from "@/components/reveal";
-import { WINES, findWine, labelNumber, price } from "@/data/wines";
+import { WINES, findWine, labelNumber } from "@/data/wines";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,19 +34,19 @@ export default async function WinePage({ params }: Props) {
   const previous = WINES[(index - 1 + WINES.length) % WINES.length];
   const next = WINES[(index + 1) % WINES.length];
 
+  // No price. The site does not sell anything, and a figure sitting in a
+  // list of facts is the one thing on the page that would imply it does.
   const facts = [
     { term: "In the glass", detail: wine.note },
     { term: "Ageing", detail: wine.ageing },
-    { term: "Price", detail: price(wine) },
   ];
 
   return (
     <main className="bg-paper">
       {/* Everything that identifies the wine, in one place. It used to be
           three: the vintage and grapes in a page intro, the summary across
-          the top right, then the glass, the ageing and the price a screen
-          further down beside the foot of the bottle, with a void between
-          them. The bottle is alpha-keyed, so it stands on the cream with no
+          the top right, then the glass and the ageing a screen further down
+          beside the foot of the bottle, with a void between them. The bottle is alpha-keyed, so it stands on the cream with no
           edge of its own. */}
       <section className="pb-16 pt-16 sm:pb-24 sm:pt-20">
         <div className="mx-auto max-w-[86rem] px-6 sm:px-10">

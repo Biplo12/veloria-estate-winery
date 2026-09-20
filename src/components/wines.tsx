@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Reveal } from "@/components/reveal";
-import { WINES, price } from "@/data/wines";
+import { WINES } from "@/data/wines";
 
 /**
  * Which of the data's two prose lines each column carries. The words live in
@@ -95,9 +95,6 @@ export function Wines() {
                       {wine.summary}
                     </p>
                   ) : null}
-                  <p className="mt-6 text-base text-ink-soft sm:text-lg lg:mt-auto lg:pt-8">
-                    {price(wine)}
-                  </p>
                 </li>
               );
             })}

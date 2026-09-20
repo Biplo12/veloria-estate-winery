@@ -6,7 +6,7 @@ import { Onward, type OnwardLink } from "@/components/onward";
 import { PageIntro } from "@/components/page-intro";
 import { Reveal } from "@/components/reveal";
 import { ESTATE } from "@/data/estate";
-import { WINES, price } from "@/data/wines";
+import { WINES } from "@/data/wines";
 
 export const metadata: Metadata = {
   title: "Wines",
@@ -106,9 +106,6 @@ export default function WinesPage() {
                     </p>
                     <p className="mt-4 max-w-[62ch] text-base leading-[1.6] text-ink-soft sm:text-lg">
                       {wine.note}
-                    </p>
-                    <p className="mt-8 text-base text-ink sm:text-lg">
-                      {price(wine)}
                     </p>
                   </div>
                 </Reveal>

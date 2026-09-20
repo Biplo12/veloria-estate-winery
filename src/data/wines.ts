@@ -1,6 +1,6 @@
 /**
  * The four wines, exactly as the estate canon in CLAUDE.md records them.
- * Sections and wine pages both read from here — a price or a vintage must never
+ * Sections and wine pages both read from here — a vintage or a figure must never
  * be written twice.
  */
 
@@ -11,6 +11,12 @@ export type Wine = {
   grapes: string;
   /** The tasting note, as the estate writes it. */
   note: string;
+  /**
+   * Canon, and deliberately not rendered anywhere. The site is not a shop:
+   * there is no cart and no checkout, so a figure on a page would be a
+   * promise it cannot keep. Kept because CLAUDE.md states it and because a
+   * shop is in the longer-term scope.
+   */
   priceEur: number;
   /** One line for lists and cards. */
   summary: string;
@@ -114,10 +120,6 @@ export function findWine(slug: string): Wine | undefined {
   return WINES.find((wine) => wine.slug === slug);
 }
 
-/** How the price is written everywhere on the site. */
-export function price(wine: Wine): string {
-  return `€${wine.priceEur}`;
-}
 
 /**
  * Every bottle carries a number. The estate prints it like this, and so do we —
