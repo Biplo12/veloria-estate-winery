@@ -4,9 +4,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
-/* Jost — a geometric humanist in the Futura line. Tracked wide in caps it is
-   the vernacular of modern natural-wine labels, which is exactly the company
-   this naive gouache keeps. */
 const jost = Jost({
   variable: "--font-jost",
   subsets: ["latin"],
@@ -61,7 +58,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         {/* tabIndex -1 so the skip link actually moves focus, not just the
             viewport, without it the next Tab returns to the header. */}
-        <div id="content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+        <div
+          id="content"
+          tabIndex={-1}
+          className="flex flex-1 flex-col outline-none"
+        >
           {children}
         </div>
         <SiteFooter />

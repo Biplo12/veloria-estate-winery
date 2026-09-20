@@ -1,7 +1,4 @@
-/**
- * The estate itself, the people, and the site's navigation. Single source of
- * truth for anything the canon in CLAUDE.md fixes.
- */
+import type { Ground, NavLink, Person } from "@/types";
 
 export const ESTATE = {
   name: "Veloria Estate Winery",
@@ -15,7 +12,6 @@ export const ESTATE = {
   region: "Province of Siena, Tuscany",
   tagline: "Made slowly. Remembered forever.",
   houseBuilt: 1892,
-  /** The name comes from the old Tuscan *velare* — to veil, to conceal. */
   nameMeaning:
     "The name comes from the old Tuscan velare, to veil, to conceal. The best things need time before they are uncovered.",
   email: "visit@veloria.it",
@@ -23,7 +19,6 @@ export const ESTATE = {
   openTo: "Open to visitors from spring through harvest.",
 } as const;
 
-/** What stands on the grounds. Years only where a year is honest. */
 export const GROUNDS = [
   { thing: "The family house", detail: "1892" },
   { thing: "The cellar", detail: "1978" },
@@ -33,16 +28,8 @@ export const GROUNDS = [
   { thing: "A small guest hotel", detail: null },
   { thing: "The olive garden", detail: null },
   { thing: "A cellar of collector wines", detail: null },
-] as const;
+] as const satisfies readonly Ground[];
 
-/**
- * The subset of GROUNDS a visitor can actually walk into, in reading order.
- * GROUNDS also carries the family house and the vineyards, which stand on the
- * estate but are not stops on a visit, and that difference is the whole reason
- * /vineyards and /visit are not printing the same list. Typing the picks as
- * GROUNDS' own literal union means a rename there fails the build here rather
- * than silently dropping a line.
- */
 const VISITABLE_THINGS: readonly (typeof GROUNDS)[number]["thing"][] = [
   "The tasting room",
   "The restaurant",
@@ -54,27 +41,11 @@ const VISITABLE_THINGS: readonly (typeof GROUNDS)[number]["thing"][] = [
 
 export const VISITABLE = VISITABLE_THINGS.map((thing) => {
   const entry = GROUNDS.find((place) => place.thing === thing);
-  if (!entry) throw new Error(`VISITABLE names ${thing}, which is not on GROUNDS`);
+  if (!entry) {
+    throw new Error(`VISITABLE names ${thing}, which is not on GROUNDS`);
+  }
   return entry;
 });
-
-export type Person = {
-  /** The last part of /family/<slug>. */
-  slug: string;
-  name: string;
-  role: string;
-  dates?: string;
-  /** One sentence, for the grids that list all four. */
-  line: string;
-  /** The person's own page. Canon only: nothing here invents a fact that
-      CLAUDE.md does not already carry. */
-  story: string[];
-  /** Painted portrait, alpha-keyed so it sits on the cream. */
-  portrait: string;
-  portraitWidth: number;
-  portraitHeight: number;
-  portraitAlt: string;
-};
 
 export const FAMILY: Person[] = [
   {
@@ -91,7 +62,8 @@ export const FAMILY: Person[] = [
     portrait: "/images/portrait-matteo.webp",
     portraitWidth: 255,
     portraitHeight: 418,
-    portraitAlt: "A painted portrait of an older man with white hair in an olive jacket.",
+    portraitAlt:
+      "A painted portrait of an older man with white hair in an olive jacket.",
   },
   {
     slug: "elisa-bellandi",
@@ -106,7 +78,8 @@ export const FAMILY: Person[] = [
     portrait: "/images/portrait-elisa.webp",
     portraitWidth: 214,
     portraitHeight: 407,
-    portraitAlt: "A painted portrait of a woman with dark hair pinned up, in red.",
+    portraitAlt:
+      "A painted portrait of a woman with dark hair pinned up, in red.",
   },
   {
     slug: "lorenzo-bellandi",
@@ -121,14 +94,13 @@ export const FAMILY: Person[] = [
     portrait: "/images/portrait-lorenzo.webp",
     portraitWidth: 274,
     portraitHeight: 431,
-    portraitAlt: "A painted portrait of a dark-haired man in a deep green shirt.",
+    portraitAlt:
+      "A painted portrait of a dark-haired man in a deep green shirt.",
   },
   {
     slug: "sofia-bellandi",
     name: "Sofia Bellandi",
     role: "Estate Director",
-    // Fourth generation ON THE LAND, never "of the winery" — the label dates
-    // from 1978, the family's work on this slope does not.
     line: "Fourth generation on this land.",
     story: [
       "Count from Matteo’s father and Sofia is the fourth to work this slope. The label only dates from 1978, so of the winery she is the third, and the older number is the truer one: the house was standing in 1892 and the ground was being farmed long before there was a bottle to put a name on.",
@@ -138,11 +110,11 @@ export const FAMILY: Person[] = [
     portrait: "/images/portrait-sofia.webp",
     portraitWidth: 243,
     portraitHeight: 385,
-    portraitAlt: "A painted portrait of a young woman with short dark hair, in coral.",
+    portraitAlt:
+      "A painted portrait of a young woman with short dark hair, in coral.",
   },
 ];
 
-/** One person by slug, for /family/[slug]. */
 export function findPerson(slug: string) {
   return FAMILY.find((person) => person.slug === slug);
 }
@@ -152,14 +124,11 @@ export const FOUNDER_QUOTE = {
   attribution: "Matteo Bellandi, 1948–2019",
 };
 
-/** The back label, printed on every bottle the estate sends out. */
 export const BACK_LABEL = [
   "Bottled at the estate.",
   "Tenuta Veloria, Siena, Italia.",
   "Some things are worth waiting for.",
 ];
-
-export type NavLink = { label: string; href: string };
 
 export const NAV_LEFT: NavLink[] = [
   { label: "about", href: "/about" },
